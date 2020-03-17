@@ -1,0 +1,93 @@
+﻿using SQLite;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using PrepandPaint.Models;
+
+namespace PrepandPaint
+{
+    public partial class MainWindow : Form
+    {
+        List<PrepAndPaint> prepAndPaintList;
+        public MainWindow()
+        {
+            InitializeComponent();
+            GetInfo();
+        }
+
+        private void GetInfo()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(PrepAndPaintDB.databasePath))
+            {
+                connection.CreateTable<PrepAndPaint>();
+                prepAndPaintList = connection.Table<PrepAndPaint>().ToList();
+                dataGridView.DataSource = prepAndPaintList;
+                dataGridView.Columns[0].Visible = false;
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            }
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            AddJob addJob = new AddJob();
+            addJob.ShowDialog();
+            GetInfo();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("Are you sure you want to delete the selected record?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
+                    int Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value;
+
+                    using (SQLiteConnection connection = new SQLiteConnection(PrepAndPaintDB.databasePath))
+                    {
+                        PrepAndPaint deleteId = new PrepAndPaint()
+                        {
+                            Id = Id
+                        };
+                        connection.Delete(deleteId);
+                    }
+                }
+                GetInfo();
+            }
+            else
+            {
+                MessageBox.Show("Error", "Sorry you need to select an entry to delete!", MessageBoxButtons.OK);
+            }
+            
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
+            PrepAndPaint editJob = new PrepAndPaint()
+            {
+                Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value,
+                JobNumber = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString(),
+                StartDate = DateTime.Parse(dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString()),
+                Prepper = dataGridView.Rows[selectedRowIndex].Cells[3].Value.ToString(),
+                PaintDate = DateTime.Parse(dataGridView.Rows[selectedRowIndex].Cells[4].Value.ToString()),
+                Painter = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
+                BodyOrDoors = dataGridView.Rows[selectedRowIndex].Cells[6].Value.ToString(),
+                Booth = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
+                Comments = dataGridView.Rows[selectedRowIndex].Cells[8].Value.ToString(),
+            };
+            AddJob addJob = new AddJob();
+            addJob.editJob = editJob;
+            addJob.edit = true;
+            addJob.ShowDialog();
+
+            // need to find out why this is not sending the object
+        }
+    }
+}
