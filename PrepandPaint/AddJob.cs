@@ -19,12 +19,17 @@ namespace PrepandPaint
         public AddJob()
         {
             InitializeComponent();
+        }
+
+        private void AddJob_Load(object sender, EventArgs e)
+        {
             if (edit)
             {
+                Text = $"Edit Job {editJob.JobNumber}";
                 FillTextBoxes();
             }
         }
-        
+
 
         private void FillTextBoxes()
         {
@@ -58,6 +63,7 @@ namespace PrepandPaint
                     };
                     connection.Update(edited);
                 }
+                this.DialogResult = DialogResult.OK;
                 Close();
                 
 
