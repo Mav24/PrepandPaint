@@ -63,7 +63,6 @@ namespace PrepandPaint
                     };
                     connection.Update(edited);
                 }
-                this.DialogResult = DialogResult.OK;
                 Close();
                 
 

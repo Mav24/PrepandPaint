@@ -61,6 +61,8 @@ namespace PrepandPaint
                     }
                 }
                 GetInfo();
+                int rowIndex = dataGridView.Rows.Count - 1;
+                dataGridView.Rows[rowIndex].Cells[1].Selected = true;
             }
             else
             {
@@ -106,6 +108,29 @@ namespace PrepandPaint
             {
                 MessageBox.Show("No Record selected to edit!", "No Records selected");
             }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(PrepAndPaintDB.databasePath))
+            {
+                List<PrepAndPaint> search = connection.Table<PrepAndPaint>().ToList();
+                if (string.IsNullOrWhiteSpace(txtSearch.Text))
+                {
+                    MessageBox.Show("You didn't enter a job number", "Error!");
+                    txtSearch.Focus();
+                }
+                else
+                {
+                    dataGridView.DataSource = search.Where(x => x.JobNumber.Contains(txtSearch.Text)).ToList();
+                }
+            }
+        }
+
+        private void BtnLoadAll_Click(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            GetInfo();
         }
     }
 }

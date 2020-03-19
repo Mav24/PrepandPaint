@@ -77,6 +77,12 @@
     </Compile>
     <Compile Include="Models\PrepAndPaint.cs" />
     <Compile Include="Models\PrepAndPaintDB.cs" />
+    <Compile Include="PassWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassWord.Designer.cs">
+      <DependentUpon>PassWord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddJob.resx">
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassWord.resx">
+      <DependentUpon>PassWord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
