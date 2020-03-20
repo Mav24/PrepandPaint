@@ -103,6 +103,8 @@ namespace PrepandPaint
                         }
                     }
                 }
+                GetInfo();
+                dataGridView.Rows[selectedRowIndex].Cells[1].Selected = true;
             }
             else
             {
