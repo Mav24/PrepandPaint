@@ -16,6 +16,7 @@ namespace PrepandPaint
     {
         public PrepAndPaint editJob;
         public bool edit;
+        public int jobId;
         public AddJob()
         {
             InitializeComponent();
@@ -47,44 +48,39 @@ namespace PrepandPaint
         {
             if (edit)
             {
-                using (SQLiteConnection connection = new SQLiteConnection(PrepAndPaintDB.databasePath))
+                PrepAndPaint edited = new PrepAndPaint()
                 {
-                    PrepAndPaint edited = new PrepAndPaint()
-                    {
-                        Id = editJob.Id,
-                        StartDate = startDateTimePicker.Value.Date,
-                        JobNumber = txtJobNumber.Text,
-                        Prepper = txtPrepper.Text,
-                        PaintDate = paintDateTimePicker.Value.Date,
-                        Painter = txtPainter.Text,
-                        BodyOrDoors = cmboBodyDoors.Text,
-                        Booth = cmboBooth.Text,
-                        Comments = txtComments.Text
-                    };
-                    connection.Update(edited);
-                }
+                    Id = editJob.Id,
+                    StartDate = startDateTimePicker.Value.Date,
+                    JobNumber = txtJobNumber.Text,
+                    Prepper = txtPrepper.Text,
+                    PaintDate = paintDateTimePicker.Value.Date,
+                    Painter = txtPainter.Text,
+                    BodyOrDoors = cmboBodyDoors.Text,
+                    Booth = cmboBooth.Text,
+                    Comments = txtComments.Text
+                };
+                PrepAndPaintDB.EditJob(edited);
                 Close();
-                
+
 
             }
             else if (!string.IsNullOrWhiteSpace(txtJobNumber.Text))
             {
-                using (SQLiteConnection connection = new SQLiteConnection(PrepAndPaintDB.databasePath))
+                PrepAndPaint newJob = new PrepAndPaint()
                 {
-                    connection.CreateTable<PrepAndPaint>();
-                    PrepAndPaint newJob = new PrepAndPaint()
-                    {
-                        StartDate = startDateTimePicker.Value.Date,
-                        JobNumber = txtJobNumber.Text,
-                        Prepper = txtPrepper.Text,
-                        PaintDate = paintDateTimePicker.Value.Date,
-                        Painter = txtPainter.Text,
-                        BodyOrDoors = cmboBodyDoors.Text,
-                        Booth = cmboBooth.Text,
-                        Comments = txtComments.Text
-                    };
-                    connection.Insert(newJob);
-                }
+                    StartDate = startDateTimePicker.Value.Date,
+                    JobNumber = txtJobNumber.Text,
+                    Prepper = txtPrepper.Text,
+                    PaintDate = paintDateTimePicker.Value.Date,
+                    Painter = txtPainter.Text,
+                    BodyOrDoors = cmboBodyDoors.Text,
+                    Booth = cmboBooth.Text,
+                    Comments = txtComments.Text
+                };
+                PrepAndPaintDB.AddJob(newJob);
+                jobId = newJob.Id;
+                this.DialogResult = DialogResult.OK;
                 Close();
             }
             else
@@ -98,6 +94,9 @@ namespace PrepandPaint
             Close();
         }
 
-        
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

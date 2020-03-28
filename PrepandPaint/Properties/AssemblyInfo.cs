@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PrepandPaint")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Prep and Paint Log info")]
+[assembly: AssemblyDescription("This program was designed to track info about prep and paint of jobs completed")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PrepandPaint")]
+[assembly: AssemblyCompany("Murray Duke")]
+[assembly: AssemblyProduct("Prep and Paint")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

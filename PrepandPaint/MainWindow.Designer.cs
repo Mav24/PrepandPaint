@@ -38,6 +38,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnSupervisorNotes = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -145,15 +146,26 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.BtnSupervisorNotes);
             this.groupBox1.Controls.Add(this.BtnAdd);
             this.groupBox1.Controls.Add(this.BtnDelete);
             this.groupBox1.Controls.Add(this.BtnEdit);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(840, 11);
+            this.groupBox1.Location = new System.Drawing.Point(718, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(289, 75);
+            this.groupBox1.Size = new System.Drawing.Size(411, 75);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // BtnSupervisorNotes
+            // 
+            this.BtnSupervisorNotes.Location = new System.Drawing.Point(278, 24);
+            this.BtnSupervisorNotes.Name = "BtnSupervisorNotes";
+            this.BtnSupervisorNotes.Size = new System.Drawing.Size(127, 38);
+            this.BtnSupervisorNotes.TabIndex = 7;
+            this.BtnSupervisorNotes.Text = "Supervisor Notes";
+            this.BtnSupervisorNotes.UseVisualStyleBackColor = true;
+            this.BtnSupervisorNotes.Click += new System.EventHandler(this.BtnSupervisorNotes_Click);
             // 
             // BtnEdit
             // 
@@ -211,6 +223,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnLoadAll;
+        private System.Windows.Forms.Button BtnSupervisorNotes;
     }
 }
 

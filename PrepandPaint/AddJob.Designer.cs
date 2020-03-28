@@ -50,7 +50,7 @@
             // 
             // startDateTimePicker
             // 
-            this.startDateTimePicker.Location = new System.Drawing.Point(134, 49);
+            this.startDateTimePicker.Location = new System.Drawing.Point(156, 49);
             this.startDateTimePicker.Name = "startDateTimePicker";
             this.startDateTimePicker.Size = new System.Drawing.Size(239, 21);
             this.startDateTimePicker.TabIndex = 4;
@@ -59,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 50);
+            this.label1.Location = new System.Drawing.Point(12, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // txtJobNumber
             // 
-            this.txtJobNumber.Location = new System.Drawing.Point(134, 8);
+            this.txtJobNumber.Location = new System.Drawing.Point(156, 8);
             this.txtJobNumber.Name = "txtJobNumber";
             this.txtJobNumber.Size = new System.Drawing.Size(239, 21);
             this.txtJobNumber.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 91);
+            this.label3.Location = new System.Drawing.Point(12, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             // txtPrepper
             // 
-            this.txtPrepper.Location = new System.Drawing.Point(134, 90);
+            this.txtPrepper.Location = new System.Drawing.Point(156, 90);
             this.txtPrepper.Name = "txtPrepper";
             this.txtPrepper.Size = new System.Drawing.Size(239, 21);
             this.txtPrepper.TabIndex = 6;
@@ -103,7 +103,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 132);
+            this.label4.Location = new System.Drawing.Point(11, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             // paintDateTimePicker
             // 
-            this.paintDateTimePicker.Location = new System.Drawing.Point(135, 130);
+            this.paintDateTimePicker.Location = new System.Drawing.Point(156, 134);
             this.paintDateTimePicker.Name = "paintDateTimePicker";
             this.paintDateTimePicker.Size = new System.Drawing.Size(238, 21);
             this.paintDateTimePicker.TabIndex = 8;
@@ -120,7 +120,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 173);
+            this.label5.Location = new System.Drawing.Point(11, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 9;
@@ -128,7 +128,7 @@
             // 
             // txtPainter
             // 
-            this.txtPainter.Location = new System.Drawing.Point(135, 173);
+            this.txtPainter.Location = new System.Drawing.Point(156, 177);
             this.txtPainter.Name = "txtPainter";
             this.txtPainter.Size = new System.Drawing.Size(238, 21);
             this.txtPainter.TabIndex = 10;
@@ -139,8 +139,9 @@
             this.cmboBodyDoors.FormattingEnabled = true;
             this.cmboBodyDoors.Items.AddRange(new object[] {
             "Doors",
-            "Body"});
-            this.cmboBodyDoors.Location = new System.Drawing.Point(135, 213);
+            "Body",
+            "Parts"});
+            this.cmboBodyDoors.Location = new System.Drawing.Point(156, 219);
             this.cmboBodyDoors.Name = "cmboBodyDoors";
             this.cmboBodyDoors.Size = new System.Drawing.Size(238, 23);
             this.cmboBodyDoors.TabIndex = 12;
@@ -149,7 +150,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 216);
+            this.label6.Location = new System.Drawing.Point(11, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 20);
             this.label6.TabIndex = 11;
@@ -157,7 +158,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(298, 402);
+            this.BtnSave.Location = new System.Drawing.Point(319, 406);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
             this.BtnSave.TabIndex = 17;
@@ -167,7 +168,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(217, 402);
+            this.BtnCancel.Location = new System.Drawing.Point(238, 406);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 18;
@@ -179,7 +180,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 259);
+            this.label7.Location = new System.Drawing.Point(11, 261);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 20);
             this.label7.TabIndex = 13;
@@ -192,7 +193,7 @@
             this.cmboBooth.Items.AddRange(new object[] {
             "New",
             "Old"});
-            this.cmboBooth.Location = new System.Drawing.Point(135, 256);
+            this.cmboBooth.Location = new System.Drawing.Point(157, 261);
             this.cmboBooth.Name = "cmboBooth";
             this.cmboBooth.Size = new System.Drawing.Size(238, 23);
             this.cmboBooth.TabIndex = 14;
@@ -201,7 +202,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 307);
+            this.label8.Location = new System.Drawing.Point(11, 311);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 20);
             this.label8.TabIndex = 15;
@@ -209,7 +210,7 @@
             // 
             // txtComments
             // 
-            this.txtComments.Location = new System.Drawing.Point(135, 306);
+            this.txtComments.Location = new System.Drawing.Point(156, 310);
             this.txtComments.Multiline = true;
             this.txtComments.Name = "txtComments";
             this.txtComments.Size = new System.Drawing.Size(238, 78);
@@ -219,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 439);
+            this.ClientSize = new System.Drawing.Size(434, 453);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.cmboBooth);
