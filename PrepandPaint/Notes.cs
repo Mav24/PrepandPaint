@@ -46,6 +46,7 @@ namespace PrepandPaint
             dataGridView1.DataSource = SupervisorNotesDB.GetInfo();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)

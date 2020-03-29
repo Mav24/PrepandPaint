@@ -94,9 +94,5 @@ namespace PrepandPaint
             Close();
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

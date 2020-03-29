@@ -15,7 +15,7 @@ namespace PrepandPaint
     {
         public SupervisorNotes editNotes;
         public int noteId;
-        //public bool edit;
+        public bool edit;
         public AddNotes()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace PrepandPaint
             {
                 SupervisorNotes editSupervisorNotes = new SupervisorNotes()
                 {
-                    Date = DateTime.Now.Date,
+                    Date = dateTimePicker1.Value.Date,
                     Comments = txtNotes.Text
                 };
                 SupervisorNotesDB.Save(editSupervisorNotes);
@@ -43,6 +43,10 @@ namespace PrepandPaint
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void AddNotes_Load(object sender, EventArgs e)
+        {
         }
     }
 }

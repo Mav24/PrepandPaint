@@ -22,9 +22,16 @@ namespace PrepandPaint
 
         private void GetInfo()
         {
+            
             dataGridView.DataSource = PrepAndPaintDB.GetData();
             dataGridView.Columns[0].Visible = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns[1].HeaderText = "Job Number";
+            dataGridView.Columns[2].HeaderText = "Start Date";
+            dataGridView.Columns[4].HeaderText = "Paint Date";
+            dataGridView.Columns[6].HeaderText = "Body-Doors-Parts";
+
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -114,7 +121,15 @@ namespace PrepandPaint
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = PrepAndPaintDB.Search(txtSearch.Text);
+            if (!string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                dataGridView.DataSource = PrepAndPaintDB.Search(txtSearch.Text);
+            }
+            else
+            {
+                MessageBox.Show("Enter a job number to search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
         }
 
         private void BtnLoadAll_Click(object sender, EventArgs e)
@@ -127,6 +142,15 @@ namespace PrepandPaint
         {
             Notes notes = new Notes();
             notes.ShowDialog();
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                BtnSearch.PerformClick();
+            }
         }
     }
 }

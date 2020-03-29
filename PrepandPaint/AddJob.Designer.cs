@@ -158,7 +158,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(319, 406);
+            this.BtnSave.Location = new System.Drawing.Point(239, 408);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
             this.BtnSave.TabIndex = 17;
@@ -168,7 +168,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(238, 406);
+            this.BtnCancel.Location = new System.Drawing.Point(320, 408);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 18;
@@ -213,6 +213,7 @@
             this.txtComments.Location = new System.Drawing.Point(156, 310);
             this.txtComments.Multiline = true;
             this.txtComments.Name = "txtComments";
+            this.txtComments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtComments.Size = new System.Drawing.Size(238, 78);
             this.txtComments.TabIndex = 16;
             // 

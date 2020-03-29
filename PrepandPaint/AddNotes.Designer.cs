@@ -32,28 +32,30 @@
             this.txtNotes = new System.Windows.Forms.TextBox();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 34);
+            this.label1.Location = new System.Drawing.Point(12, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Note:";
+            this.label1.Text = "Date:";
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(92, 40);
+            this.txtNotes.Location = new System.Drawing.Point(92, 48);
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(656, 20);
             this.txtNotes.TabIndex = 1;
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(673, 80);
+            this.BtnCancel.Location = new System.Drawing.Point(673, 88);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 3;
@@ -63,7 +65,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(592, 80);
+            this.BtnSave.Location = new System.Drawing.Point(592, 88);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
             this.BtnSave.TabIndex = 2;
@@ -71,20 +73,40 @@
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(92, 13);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(227, 20);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Note:";
+            // 
             // AddNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 123);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.txtNotes);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "AddNotes";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Notes";
+            this.Load += new System.EventHandler(this.AddNotes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +118,7 @@
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnSave;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
     }
 }
