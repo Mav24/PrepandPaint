@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.BtnAdd = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.BtnSupervisorNotes = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -52,10 +53,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(317, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(394, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 31);
+            this.label1.Size = new System.Drawing.Size(335, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Prep and Paint Details";
             // 
@@ -64,25 +65,25 @@
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1080, 515);
+            this.dataGridView.Size = new System.Drawing.Size(1246, 626);
             this.dataGridView.TabIndex = 0;
             // 
             // BtnAdd
@@ -107,6 +108,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.BtnExit);
             this.panel1.Controls.Add(this.BtnLoadAll);
             this.panel1.Controls.Add(this.BtnSearch);
             this.panel1.Controls.Add(this.txtSearch);
@@ -116,22 +118,22 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 100);
+            this.panel1.Size = new System.Drawing.Size(1246, 100);
             this.panel1.TabIndex = 3;
             // 
             // BtnLoadAll
             // 
-            this.BtnLoadAll.Location = new System.Drawing.Point(323, 67);
+            this.BtnLoadAll.Location = new System.Drawing.Point(392, 67);
             this.BtnLoadAll.Name = "BtnLoadAll";
             this.BtnLoadAll.Size = new System.Drawing.Size(75, 23);
             this.BtnLoadAll.TabIndex = 6;
-            this.BtnLoadAll.Text = "Load All";
+            this.BtnLoadAll.Text = "&Load All";
             this.BtnLoadAll.UseVisualStyleBackColor = true;
             this.BtnLoadAll.Click += new System.EventHandler(this.BtnLoadAll_Click);
             // 
             // BtnSearch
             // 
-            this.BtnSearch.Location = new System.Drawing.Point(242, 67);
+            this.BtnSearch.Location = new System.Drawing.Point(311, 67);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(75, 23);
             this.BtnSearch.TabIndex = 5;
@@ -141,7 +143,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(73, 67);
+            this.txtSearch.Location = new System.Drawing.Point(154, 66);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(144, 22);
             this.txtSearch.TabIndex = 4;
@@ -150,12 +152,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(8, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 18);
+            this.label2.Size = new System.Drawing.Size(140, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Search:";
+            this.label2.Text = "Search &By Job#:";
             // 
             // groupBox1
             // 
@@ -165,19 +167,20 @@
             this.groupBox1.Controls.Add(this.BtnDelete);
             this.groupBox1.Controls.Add(this.BtnEdit);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(657, 19);
+            this.groupBox1.Location = new System.Drawing.Point(774, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(411, 75);
+            this.groupBox1.Size = new System.Drawing.Size(372, 76);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
             // BtnSupervisorNotes
             // 
+            this.BtnSupervisorNotes.ForeColor = System.Drawing.Color.Red;
             this.BtnSupervisorNotes.Location = new System.Drawing.Point(278, 24);
             this.BtnSupervisorNotes.Name = "BtnSupervisorNotes";
-            this.BtnSupervisorNotes.Size = new System.Drawing.Size(127, 38);
+            this.BtnSupervisorNotes.Size = new System.Drawing.Size(81, 38);
             this.BtnSupervisorNotes.TabIndex = 7;
-            this.BtnSupervisorNotes.Text = "Supervisor Notes";
+            this.BtnSupervisorNotes.Text = "&Notes";
             this.BtnSupervisorNotes.UseVisualStyleBackColor = true;
             this.BtnSupervisorNotes.Click += new System.EventHandler(this.BtnSupervisorNotes_Click);
             // 
@@ -197,17 +200,29 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1080, 515);
+            this.panel2.Size = new System.Drawing.Size(1246, 626);
             this.panel2.TabIndex = 4;
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.ForeColor = System.Drawing.Color.Black;
+            this.BtnExit.Location = new System.Drawing.Point(1153, 24);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(81, 62);
+            this.BtnExit.TabIndex = 7;
+            this.BtnExit.Text = "E&xit";
+            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.ClientSize = new System.Drawing.Size(1246, 726);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
@@ -238,6 +253,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnLoadAll;
         private System.Windows.Forms.Button BtnSupervisorNotes;
+        private System.Windows.Forms.Button BtnExit;
     }
 }
 

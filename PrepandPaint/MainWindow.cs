@@ -66,10 +66,9 @@ namespace PrepandPaint
                         Id = Id
                     };
                     PrepAndPaintDB.Delete(deleteId);
+                    GetInfo();
+                    dataGridView.Rows[selectedRowIndex - 1].Cells[1].Selected = true;
                 }
-                GetInfo();
-                int rowIndex = dataGridView.Rows.Count - 1;
-                dataGridView.Rows[rowIndex].Cells[1].Selected = true;
             }
             else
             {
@@ -151,6 +150,11 @@ namespace PrepandPaint
                 e.Handled = true;
                 BtnSearch.PerformClick();
             }
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
