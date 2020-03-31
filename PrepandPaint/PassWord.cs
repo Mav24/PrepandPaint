@@ -16,7 +16,7 @@ namespace PrepandPaint
         {
             InitializeComponent();
         }
-        public string adminLogin = "123";
+        public string adminLogin = "Maverick";
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
