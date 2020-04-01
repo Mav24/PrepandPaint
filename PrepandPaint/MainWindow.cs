@@ -42,6 +42,7 @@ namespace PrepandPaint
             if (result == DialogResult.OK)
             {
                 GetInfo();
+                txtSearch.Clear();
                 foreach (DataGridViewRow row in dataGridView.Rows)
                 {
                     if (row.Cells[0].Value.Equals(addJob.jobId))

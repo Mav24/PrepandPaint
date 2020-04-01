@@ -42,7 +42,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "PassWord:";
+            this.label1.Text = "&PassWord:";
             // 
             // txtPassWord
             // 
@@ -57,8 +57,8 @@
             this.BtnCancel.Location = new System.Drawing.Point(120, 72);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
-            this.BtnCancel.TabIndex = 2;
-            this.BtnCancel.Text = "Cancel";
+            this.BtnCancel.TabIndex = 3;
+            this.BtnCancel.Text = "&Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
@@ -68,12 +68,13 @@
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Size = new System.Drawing.Size(75, 23);
             this.BtnOk.TabIndex = 2;
-            this.BtnOk.Text = "Ok";
+            this.BtnOk.Text = "&Ok";
             this.BtnOk.UseVisualStyleBackColor = true;
             this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
             // PassWord
             // 
+            this.AcceptButton = this.BtnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 107);
