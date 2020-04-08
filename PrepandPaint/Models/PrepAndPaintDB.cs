@@ -9,47 +9,52 @@ namespace PrepandPaint.Models
 {
     public class PrepAndPaintDB
     {
-        public static List<PrepAndPaint> GetData()
+        #region for new database
+        public static List<PrepAndPaintModel> GetNewData()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(DataBase.databasePath))
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
-                
-                connection.CreateTable<PrepAndPaint>();
-                List<PrepAndPaint> prepAndPaintList = new List<PrepAndPaint>();
-                prepAndPaintList = connection.Table<PrepAndPaint>().ToList();
+
+                connection.CreateTable<PrepAndPaintModel>();
+                List<PrepAndPaintModel> prepAndPaintList = new List<PrepAndPaintModel>();
+                prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
                 return prepAndPaintList.OrderBy(x => x.JobNumber).ToList();
             }
         }
 
-        public static void AddJob(PrepAndPaint newJob)
+        // to convert database
+        public static void AddnewJob(PrepAndPaintModel newJob)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(DataBase.databasePath))
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 connection.Insert(newJob);
             }
         }
 
-        public static void EditJob(PrepAndPaint editJob)
+        // for new edit values
+        public static void EditnewJob(PrepAndPaintModel editJob)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(DataBase.databasePath))
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 connection.Update(editJob);
             }
-        }
+        } 
+        #endregion
 
-        public static void Delete(PrepAndPaint Id)
+
+        public static void Delete(PrepAndPaintModel Id)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(DataBase.databasePath))
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 connection.Delete(Id);
             }
         }
 
-        public static List<PrepAndPaint> Search(string jobNumber)
+        public static List<PrepAndPaintModel> Search(string jobNumber)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(DataBase.databasePath))
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
-                List<PrepAndPaint> search = connection.Table<PrepAndPaint>().ToList();
+                List<PrepAndPaintModel> search = connection.Table<PrepAndPaintModel>().ToList();
                 return search.Where(x => x.JobNumber.Contains(jobNumber)).ToList();
             }
         }

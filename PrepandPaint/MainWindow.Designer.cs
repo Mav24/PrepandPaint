@@ -35,6 +35,7 @@
             this.BtnAdd = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnExit = new System.Windows.Forms.Button();
             this.BtnLoadAll = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.BtnSupervisorNotes = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.BtnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -64,7 +64,6 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
             this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -120,6 +119,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1246, 100);
             this.panel1.TabIndex = 3;
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.ForeColor = System.Drawing.Color.Black;
+            this.BtnExit.Location = new System.Drawing.Point(1153, 24);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(81, 62);
+            this.BtnExit.TabIndex = 7;
+            this.BtnExit.Text = "E&xit";
+            this.BtnExit.UseVisualStyleBackColor = true;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // BtnLoadAll
             // 
@@ -202,17 +212,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1246, 626);
             this.panel2.TabIndex = 4;
-            // 
-            // BtnExit
-            // 
-            this.BtnExit.ForeColor = System.Drawing.Color.Black;
-            this.BtnExit.Location = new System.Drawing.Point(1153, 24);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(81, 62);
-            this.BtnExit.TabIndex = 7;
-            this.BtnExit.Text = "E&xit";
-            this.BtnExit.UseVisualStyleBackColor = true;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // MainWindow
             // 

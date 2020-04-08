@@ -22,16 +22,20 @@ namespace PrepandPaint
 
         private void GetInfo()
         {
-            
-            dataGridView.DataSource = PrepAndPaintDB.GetData();
+            dataGridView.DataSource = PrepAndPaintDB.GetNewData();
+            SetDataGridView();
+        }
+
+        private void SetDataGridView()
+        {
             dataGridView.Columns[0].Visible = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns[1].HeaderText = "Job Number";
             dataGridView.Columns[2].HeaderText = "Start Date";
             dataGridView.Columns[4].HeaderText = "Paint Date";
             dataGridView.Columns[6].HeaderText = "Body-Doors-Parts";
-
+            dataGridView.Columns[8].HeaderText = "New-Process";
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -66,13 +70,17 @@ namespace PrepandPaint
                     string job = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString();
                     if (MessageBox.Show($"Are you sure you want to delete job #{job}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        PrepAndPaint deleteId = new PrepAndPaint()
+                        PrepAndPaintModel deleteId = new PrepAndPaintModel()
                         {
                             Id = Id
                         };
                         PrepAndPaintDB.Delete(deleteId);
                         GetInfo();
-                        dataGridView.Rows[selectedRowIndex - 1].Cells[1].Selected = true;
+                        if (selectedRowIndex > 0)
+                        {
+                            dataGridView.Rows[selectedRowIndex - 1].Cells[1].Selected = true;
+                        }
+                        
                     }
                 }
                 else
@@ -93,17 +101,18 @@ namespace PrepandPaint
                 if (dataGridView.SelectedRows.Count > 0)
                 {
                     int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
-                    PrepAndPaint editJob = new PrepAndPaint()
+                    PrepAndPaintModel editJob = new PrepAndPaintModel()
                     {
                         Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value,
                         JobNumber = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString(),
-                        StartDate = DateTime.Parse(dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString()),
+                        StartDate = dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString(),
                         Prepper = dataGridView.Rows[selectedRowIndex].Cells[3].Value.ToString(),
-                        PaintDate = DateTime.Parse(dataGridView.Rows[selectedRowIndex].Cells[4].Value.ToString()),
+                        PaintDate = dataGridView.Rows[selectedRowIndex].Cells[4].Value.ToString(),
                         Painter = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
                         BodyOrDoors = dataGridView.Rows[selectedRowIndex].Cells[6].Value.ToString(),
                         Booth = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
-                        Comments = dataGridView.Rows[selectedRowIndex].Cells[8].Value.ToString(),
+                        NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[8].Value,
+                        Comments = dataGridView.Rows[selectedRowIndex].Cells[9].Value.ToString(),
                     };
                     AddJob addJob = new AddJob();
                     addJob.editJob = editJob;
@@ -112,16 +121,16 @@ namespace PrepandPaint
                     if (results == DialogResult.OK)
                     {
                         GetInfo();
+                        txtSearch.Clear();
                         foreach (DataGridViewRow row in dataGridView.Rows)
                         {
                             if (row.Cells[0].Value.Equals(editJob.Id))
                             {
-                                row.Cells[2].Selected = true;
+                                row.Cells[1].Selected = true;
+                                dataGridView.FirstDisplayedScrollingRowIndex = editJob.Id;
                             }
                         }
                     }
-                    GetInfo();
-                    dataGridView.Rows[selectedRowIndex].Cells[1].Selected = true;
                 }
                 else
                 {
@@ -136,6 +145,7 @@ namespace PrepandPaint
             if (!string.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 dataGridView.DataSource = PrepAndPaintDB.Search(txtSearch.Text);
+                SetDataGridView();
             }
             else
             {

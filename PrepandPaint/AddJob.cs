@@ -14,7 +14,7 @@ namespace PrepandPaint
 {
     public partial class AddJob : Form
     {
-        public PrepAndPaint editJob;
+        public PrepAndPaintModel editJob;
         public bool edit;
         public int jobId;
         public AddJob()
@@ -34,12 +34,13 @@ namespace PrepandPaint
         private void FillTextBoxes()
         {
             txtJobNumber.Text = editJob.JobNumber;
-            startDateTimePicker.Value = editJob.StartDate;
+            maskStartDate.Text = editJob.StartDate;
             txtPrepper.Text = editJob.Prepper;
-            paintDateTimePicker.Value = editJob.PaintDate;
+            maskPaintDate.Text = editJob.PaintDate;
             txtPainter.Text = editJob.Painter;
             cmboBodyDoors.SelectedItem = editJob.BodyOrDoors;
             cmboBooth.SelectedItem = editJob.Booth;
+            checkNewProcess.Checked = editJob.NewProcess;
             txtComments.Text = editJob.Comments;
         }
 
@@ -49,35 +50,38 @@ namespace PrepandPaint
             {
                 if (edit)
                 {
-                    PrepAndPaint edited = new PrepAndPaint()
+                    PrepAndPaintModel edited = new PrepAndPaintModel()
                     {
                         Id = editJob.Id,
-                        StartDate = startDateTimePicker.Value.Date,
+                        StartDate = maskStartDate.Text,
                         JobNumber = txtJobNumber.Text,
                         Prepper = txtPrepper.Text,
-                        PaintDate = paintDateTimePicker.Value.Date,
+                        PaintDate = maskPaintDate.Text,
                         Painter = txtPainter.Text,
                         BodyOrDoors = cmboBodyDoors.Text,
                         Booth = cmboBooth.Text,
+                        NewProcess = checkNewProcess.Checked,
                         Comments = txtComments.Text
                     };
-                    PrepAndPaintDB.EditJob(edited);
+                    PrepAndPaintDB.EditnewJob(edited);
+                    this.DialogResult = DialogResult.OK;
                     Close();
                 }
                 else
                 {
-                    PrepAndPaint newJob = new PrepAndPaint()
+                    PrepAndPaintModel newJob = new PrepAndPaintModel()
                     {
-                        StartDate = startDateTimePicker.Value.Date,
+                        StartDate = maskStartDate.Text,
                         JobNumber = txtJobNumber.Text,
                         Prepper = txtPrepper.Text,
-                        PaintDate = paintDateTimePicker.Value.Date,
+                        PaintDate = maskPaintDate.Text,
                         Painter = txtPainter.Text,
                         BodyOrDoors = cmboBodyDoors.Text,
                         Booth = cmboBooth.Text,
+                        NewProcess = checkNewProcess.Checked,
                         Comments = txtComments.Text
                     };
-                    PrepAndPaintDB.AddJob(newJob);
+                    PrepAndPaintDB.AddnewJob(newJob);
                     jobId = newJob.Id;
                     this.DialogResult = DialogResult.OK;
                     Close();
@@ -94,6 +98,7 @@ namespace PrepandPaint
         {
             return
                 Validator.IsPresent(txtJobNumber);
+                //Validator.DateFormat(maskStartDate);
         }
 
     }

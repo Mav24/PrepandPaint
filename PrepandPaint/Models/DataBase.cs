@@ -8,11 +8,12 @@ namespace PrepandPaint.Models
 {
     public class DataBase
     {
-        static string mainDbFile = "prepandpaint.db";
+
         static string supervisorFile = "supervisornotes.db";
-        
-        public static string databasePath = System.IO.Path.Combine(mainDbFile);
-        
+        static string prepPaintDBFile = "mainlog.db";
+                
         public static string databaseSupervisorNotes = System.IO.Path.Combine(supervisorFile);
+
+        public static string mainDatabaseFile = System.IO.Path.Combine(prepPaintDBFile);
     }
 }

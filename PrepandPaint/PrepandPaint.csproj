@@ -102,8 +102,8 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DataBase.cs" />
-    <Compile Include="Models\PrepAndPaint.cs" />
     <Compile Include="Models\PrepAndPaintDB.cs" />
+    <Compile Include="Models\PrepAndPaintModel.cs" />
     <Compile Include="Models\SupervisorNotes.cs" />
     <Compile Include="Models\SupervisorNotesDB.cs" />
     <Compile Include="Notes.cs">
