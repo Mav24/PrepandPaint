@@ -51,7 +51,7 @@ namespace PrepandPaint
                 {
                     if (row.Cells[0].Value.Equals(addJob.jobId))
                     {
-                        row.Cells[2].Selected = true;
+                        row.Cells[1].Selected = true;
                     }
                 }
             }

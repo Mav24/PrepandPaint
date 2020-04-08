@@ -15,6 +15,7 @@ namespace PrepandPaint
     public partial class AddJob : Form
     {
         public PrepAndPaintModel editJob;
+        //public PrepAndPaintModel newJob;
         public bool edit;
         public int jobId;
         public AddJob()
