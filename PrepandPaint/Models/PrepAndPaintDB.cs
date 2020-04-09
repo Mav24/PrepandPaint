@@ -14,7 +14,6 @@ namespace PrepandPaint.Models
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
-
                 connection.CreateTable<PrepAndPaintModel>();
                 List<PrepAndPaintModel> prepAndPaintList = new List<PrepAndPaintModel>();
                 prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
@@ -22,7 +21,6 @@ namespace PrepandPaint.Models
             }
         }
 
-        // to convert database
         public static void AddnewJob(PrepAndPaintModel newJob)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
@@ -31,7 +29,6 @@ namespace PrepandPaint.Models
             }
         }
 
-        // for new edit values
         public static void EditnewJob(PrepAndPaintModel editJob)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
