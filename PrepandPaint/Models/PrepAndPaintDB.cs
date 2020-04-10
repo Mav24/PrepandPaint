@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,20 @@ namespace PrepandPaint.Models
                 prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
                 return prepAndPaintList.OrderBy(x => x.JobNumber).ToList();
             }
+        }
+
+        public static void BackUpDataBase(string fileName)
+        {
+            string databasename;
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Backup(fileName, databasename = "main");
+            }
+        }
+
+        public static void RestoreDataBase(string fileName)
+        {
+            File.Copy(Path.Combine(fileName), Path.Combine(DataBase.mainDatabaseFile), true);
         }
 
         public static void AddnewJob(PrepAndPaintModel newJob)

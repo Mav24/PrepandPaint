@@ -128,7 +128,10 @@ namespace PrepandPaint
                             if (row.Cells[0].Value.Equals(editJob.Id))
                             {
                                 row.Cells[1].Selected = true;
-                                dataGridView.FirstDisplayedScrollingRowIndex = editJob.Id;
+
+                                #region need to fix this
+                                //dataGridView.FirstDisplayedScrollingRowIndex = editJob.Id;
+                                #endregion
                             }
                         }
                     }
@@ -179,6 +182,32 @@ namespace PrepandPaint
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"For support email:\nmurrayduke@rogers.com\n\nIcons provided by:\n" +
+                $"http://creativecommons.org/licenses/by-nd/3.0/", "Need Help?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnBackUpDataBase_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.FileName = "mainlog";
+            saveFileDialog1.Filter = "Data base format (*.db)|*.db";
+            saveFileDialog1.ShowDialog();
+            PrepAndPaintDB.BackUpDataBase(saveFileDialog1.FileName);
+        }
+
+        private void BtnRestoreDataBase_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "Database format (*.db)|*.db";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                PrepAndPaintDB.RestoreDataBase(openFileDialog1.FileName);
+                GetInfo();
+            }
+
         }
     }
 }
