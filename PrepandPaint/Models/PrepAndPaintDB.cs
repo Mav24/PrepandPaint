@@ -22,12 +22,12 @@ namespace PrepandPaint.Models
             }
         }
 
-        public static void BackUpDataBase(string fileName)
+        public static void BackUpDataBase(string destinationPath)
         {
-            string databasename;
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
-                connection.Backup(fileName, databasename = "main");
+                string databasename;
+                connection.Backup(destinationPath, databasename = "main");
             }
         }
 
