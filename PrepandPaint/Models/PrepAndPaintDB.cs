@@ -10,7 +10,7 @@ namespace PrepandPaint.Models
 {
     public class PrepAndPaintDB
     {
-        #region for new database
+        #region Main window methods
         public static List<PrepAndPaintModel> GetNewData()
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
@@ -108,6 +108,7 @@ namespace PrepandPaint.Models
         #endregion
 
         #region Items Methods
+
         public static List<ItemsModel> GetItemsList()
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
