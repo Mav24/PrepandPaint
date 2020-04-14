@@ -21,6 +21,7 @@ namespace PrepandPaint
         public AddJob()
         {
             InitializeComponent();
+            GetItemList();
         }
 
         private void AddJob_Load(object sender, EventArgs e)
@@ -30,6 +31,11 @@ namespace PrepandPaint
                 Text = $"Edit Job {editJob.JobNumber}";
                 FillTextBoxes();
             }
+            else
+            {
+                cmboBodyDoors.SelectedIndex = -1;
+            }
+            
         }
 
         private void FillTextBoxes()
@@ -39,7 +45,7 @@ namespace PrepandPaint
             txtPrepper.Text = editJob.Prepper;
             maskPaintDate.Text = editJob.PaintDate;
             txtPainter.Text = editJob.Painter;
-            cmboBodyDoors.SelectedItem = editJob.BodyOrDoors;
+            cmboBodyDoors.Text = editJob.BodyOrDoors;
             cmboBooth.SelectedItem = editJob.Booth;
             checkNewProcess.Checked = editJob.NewProcess;
             txtComments.Text = editJob.Comments;
@@ -70,6 +76,7 @@ namespace PrepandPaint
                 }
                 else
                 {
+                    
                     PrepAndPaintModel newJob = new PrepAndPaintModel()
                     {
                         StartDate = maskStartDate.Text,
@@ -102,5 +109,21 @@ namespace PrepandPaint
                 //Validator.DateFormat(maskStartDate);
         }
 
+        private void BtnAddItem_Click(object sender, EventArgs e)
+        {
+            AddItem addNewItem = new AddItem();
+            DialogResult result = addNewItem.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                GetItemList();
+                cmboBodyDoors.SelectedIndex = -1;
+            }
+        }
+
+        private void GetItemList()
+        {
+            cmboBodyDoors.DisplayMember = "ItemName";
+            cmboBodyDoors.DataSource = PrepAndPaintDB.GetItemsList();
+        }
     }
 }

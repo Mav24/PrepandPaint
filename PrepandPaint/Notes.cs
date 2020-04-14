@@ -43,7 +43,7 @@ namespace PrepandPaint
 
         private void GetInfo()
         {
-            dataGridView1.DataSource = SupervisorNotesDB.GetInfo();
+            dataGridView1.DataSource = PrepAndPaintDB.GetSuperVisorInfo();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -57,11 +57,11 @@ namespace PrepandPaint
                 int Id = (int)dataGridView1.Rows[selectedRowIndex].Cells[0].Value;
                 if (MessageBox.Show("Are you sure you wanted to delete this entry?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    SupervisorNotes deleteId = new SupervisorNotes()
+                    SupervisorNotesModel deleteId = new SupervisorNotesModel()
                     {
                         Id = Id
                     };
-                    SupervisorNotesDB.Delete(deleteId);
+                    PrepAndPaintDB.DeleteSuperVisorNote(deleteId);
                 }
                 GetInfo();
             }

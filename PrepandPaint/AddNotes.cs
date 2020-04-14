@@ -13,7 +13,7 @@ namespace PrepandPaint
 {
     public partial class AddNotes : Form
     {
-        public SupervisorNotes editNotes;
+        public SupervisorNotesModel editNotes;
         public int noteId;
         public bool edit;
         public AddNotes()
@@ -25,12 +25,12 @@ namespace PrepandPaint
         {
             if (!string.IsNullOrWhiteSpace(txtNotes.Text))
             {
-                SupervisorNotes editSupervisorNotes = new SupervisorNotes()
+                SupervisorNotesModel editSupervisorNotes = new SupervisorNotesModel()
                 {
                     Date = dateTimePicker1.Value.Date,
                     Comments = txtNotes.Text
                 };
-                SupervisorNotesDB.Save(editSupervisorNotes);
+                PrepAndPaintDB.SaveSuperVisorNotes(editSupervisorNotes);
                 this.DialogResult = DialogResult.OK;
                 Close();
             }

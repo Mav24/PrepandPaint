@@ -21,7 +21,6 @@ namespace PrepandPaint.Models
                 return prepAndPaintList.OrderBy(x => x.JobNumber).ToList();
             }
         }
-
         public static void BackUpDataBase(string destinationPath)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
@@ -70,5 +69,80 @@ namespace PrepandPaint.Models
                 return search.Where(x => x.JobNumber.Contains(jobNumber)).ToList();
             }
         }
+
+        #region SuperVisor Methods
+        public static List<SupervisorNotesModel> GetSuperVisorInfo()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.CreateTable<SupervisorNotesModel>();
+                List<SupervisorNotesModel> supervisorNotes = new List<SupervisorNotesModel>();
+                supervisorNotes = connection.Table<SupervisorNotesModel>().ToList();
+                return supervisorNotes.OrderBy(x => x.Date).ToList();
+
+            }
+        }
+        public static void SaveSuperVisorNotes(SupervisorNotesModel notes)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Insert(notes);
+            }
+        }
+
+        public static void UpdateSuperVisorNote(SupervisorNotesModel Id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Update(Id);
+            }
+        }
+
+        public static void DeleteSuperVisorNote(SupervisorNotesModel Id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Delete(Id);
+            }
+        }
+        #endregion
+
+        #region Items Methods
+        public static List<ItemsModel> GetItemsList()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.CreateTable<ItemsModel>();
+                List<ItemsModel> items = new List<ItemsModel>();
+                items = connection.Table<ItemsModel>().ToList();
+                return items;
+            }
+        }
+
+        public static void AddItem(ItemsModel item)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Insert(item);
+            }
+        }
+
+        public static void UpdateItem(ItemsModel item)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Update(item);
+            }
+        }
+
+        public static void DeleteItem(ItemsModel Id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Delete(Id);
+            }
+        }
+
+        #endregion
     }
 }

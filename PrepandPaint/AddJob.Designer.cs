@@ -49,6 +49,7 @@
             this.checkNewProcess = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.BtnAddItem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -127,10 +128,6 @@
             // 
             this.cmboBodyDoors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboBodyDoors.FormattingEnabled = true;
-            this.cmboBodyDoors.Items.AddRange(new object[] {
-            "Doors",
-            "Body",
-            "Parts"});
             this.cmboBodyDoors.Location = new System.Drawing.Point(118, 259);
             this.cmboBodyDoors.Name = "cmboBodyDoors";
             this.cmboBodyDoors.Size = new System.Drawing.Size(238, 23);
@@ -260,11 +257,22 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "mm/dd/yyyy";
             // 
+            // BtnAddItem
+            // 
+            this.BtnAddItem.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
+            this.BtnAddItem.Location = new System.Drawing.Point(371, 259);
+            this.BtnAddItem.Name = "BtnAddItem";
+            this.BtnAddItem.Size = new System.Drawing.Size(38, 23);
+            this.BtnAddItem.TabIndex = 23;
+            this.BtnAddItem.UseVisualStyleBackColor = true;
+            this.BtnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
+            // 
             // AddJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 489);
+            this.ClientSize = new System.Drawing.Size(421, 489);
+            this.Controls.Add(this.BtnAddItem);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.checkNewProcess);
@@ -321,5 +329,6 @@
         private System.Windows.Forms.CheckBox checkNewProcess;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button BtnAddItem;
     }
 }
