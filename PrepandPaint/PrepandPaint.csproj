@@ -183,6 +183,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hnet.com-image.ico" />
+    <None Include="Resources\Search_24x24.png" />
+    <None Include="Resources\Search_48x48.png" />
     <None Include="Resources\Archive_16x16.png" />
     <None Include="Resources\Flash Disk_16x16.png" />
     <None Include="Resources\Hard Disk_16x16.png" />

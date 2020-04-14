@@ -133,6 +133,26 @@ namespace PrepandPaint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Search_24x24 {
+            get {
+                object obj = ResourceManager.GetObject("Search_24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search_48x48 {
+            get {
+                object obj = ResourceManager.GetObject("Search_48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Text_Document_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Text Document_16x16", resourceCulture);

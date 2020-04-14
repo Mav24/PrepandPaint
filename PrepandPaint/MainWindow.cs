@@ -32,7 +32,7 @@ namespace PrepandPaint
             dataGridView.Columns[0].Visible = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns[1].HeaderText = "Job Number";
+            dataGridView.Columns[1].HeaderText = "Job#";
             dataGridView.Columns[2].HeaderText = "Start Date";
             dataGridView.Columns[4].HeaderText = "Paint Date";
             dataGridView.Columns[6].HeaderText = "Item";

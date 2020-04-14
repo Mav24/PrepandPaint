@@ -148,7 +148,7 @@
             this.BtnSave.Location = new System.Drawing.Point(197, 449);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
-            this.BtnSave.TabIndex = 18;
+            this.BtnSave.TabIndex = 19;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -158,7 +158,7 @@
             this.BtnCancel.Location = new System.Drawing.Point(278, 449);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
-            this.BtnCancel.TabIndex = 19;
+            this.BtnCancel.TabIndex = 20;
             this.BtnCancel.Text = "Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -170,7 +170,7 @@
             this.label7.Location = new System.Drawing.Point(20, 301);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 20);
-            this.label7.TabIndex = 14;
+            this.label7.TabIndex = 15;
             this.label7.Text = "Booth:";
             // 
             // cmboBooth
@@ -183,7 +183,7 @@
             this.cmboBooth.Location = new System.Drawing.Point(119, 301);
             this.cmboBooth.Name = "cmboBooth";
             this.cmboBooth.Size = new System.Drawing.Size(238, 23);
-            this.cmboBooth.TabIndex = 15;
+            this.cmboBooth.TabIndex = 16;
             // 
             // label8
             // 
@@ -192,7 +192,7 @@
             this.label8.Location = new System.Drawing.Point(20, 351);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 20);
-            this.label8.TabIndex = 16;
+            this.label8.TabIndex = 17;
             this.label8.Text = "Comments:";
             // 
             // txtComments
@@ -202,7 +202,7 @@
             this.txtComments.Name = "txtComments";
             this.txtComments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtComments.Size = new System.Drawing.Size(238, 78);
-            this.txtComments.TabIndex = 17;
+            this.txtComments.TabIndex = 18;
             // 
             // maskStartDate
             // 
@@ -260,10 +260,10 @@
             // BtnAddItem
             // 
             this.BtnAddItem.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
-            this.BtnAddItem.Location = new System.Drawing.Point(371, 259);
+            this.BtnAddItem.Location = new System.Drawing.Point(362, 259);
             this.BtnAddItem.Name = "BtnAddItem";
             this.BtnAddItem.Size = new System.Drawing.Size(38, 23);
-            this.BtnAddItem.TabIndex = 23;
+            this.BtnAddItem.TabIndex = 14;
             this.BtnAddItem.UseVisualStyleBackColor = true;
             this.BtnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
             // 
@@ -271,7 +271,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(421, 489);
+            this.ClientSize = new System.Drawing.Size(409, 489);
             this.Controls.Add(this.BtnAddItem);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
