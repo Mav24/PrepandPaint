@@ -33,9 +33,9 @@ namespace PrepandPaint
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns[1].HeaderText = "Job#";
-            dataGridView.Columns[2].HeaderText = "Start Date";
-            dataGridView.Columns[4].HeaderText = "Paint Date";
-            dataGridView.Columns[6].HeaderText = "Item";
+            dataGridView.Columns[2].HeaderText = "Item";
+            dataGridView.Columns[3].HeaderText = "Start Date";
+            dataGridView.Columns[5].HeaderText = "Paint Date";
             dataGridView.Columns[8].HeaderText = "New-Process";
         }
 
@@ -53,6 +53,7 @@ namespace PrepandPaint
                     if (row.Cells[0].Value.Equals(addJob.jobId))
                     {
                         row.Cells[1].Selected = true;
+                        dataGridView.FirstDisplayedScrollingRowIndex = row.Index;
                     }
                 }
             }
