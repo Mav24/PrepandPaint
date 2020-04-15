@@ -300,7 +300,7 @@
             this.Name = "AddJob";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Job";
+            this.Text = "Add/Edit";
             this.Load += new System.EventHandler(this.AddJob_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
