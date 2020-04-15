@@ -66,7 +66,7 @@ namespace PrepandPaint.Models
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 List<PrepAndPaintModel> search = connection.Table<PrepAndPaintModel>().ToList();
-                return search.Where(x => x.JobNumber.Contains(jobNumber)).ToList();
+                return search.Where(x => x.JobNumber.Contains(jobNumber)).OrderBy(d => d.StartDate).ToList();
             }
         }
 
