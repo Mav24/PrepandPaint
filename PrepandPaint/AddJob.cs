@@ -125,5 +125,10 @@ namespace PrepandPaint
             cmboBodyDoors.DisplayMember = "ItemName";
             cmboBodyDoors.DataSource = PrepAndPaintDB.GetItemsList();
         }
+
+        private void BtnAddItem_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Add new item!", BtnAddItem);
+        }
     }
 }
