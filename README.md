@@ -9,4 +9,4 @@ This is a logging program with a SQLite Database.
 
 - Database backup option
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Program](/ProgramScreenShot.png)
