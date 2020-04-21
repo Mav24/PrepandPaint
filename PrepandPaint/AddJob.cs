@@ -15,7 +15,6 @@ namespace PrepandPaint
     public partial class AddJob : Form
     {
         public PrepAndPaintModel editJob;
-        //public PrepAndPaintModel newJob;
         public bool edit;
         public int jobId;
         public AddJob()
@@ -55,6 +54,7 @@ namespace PrepandPaint
         {
             if (IsValidate())
             {
+                List<PrepAndPaintModel> prepAndPaintModels = PrepAndPaintDB.GetNewData();
                 if (edit)
                 {
                     PrepAndPaintModel edited = new PrepAndPaintModel()
@@ -70,13 +70,21 @@ namespace PrepandPaint
                         NewProcess = checkNewProcess.Checked,
                         Comments = txtComments.Text
                     };
+                    foreach (var item in prepAndPaintModels)
+                    {
+                        if (item.JobNumber == edited.JobNumber && item.BodyOrDoors == edited.BodyOrDoors)
+                        {
+                            MessageBox.Show($"Item: {edited.BodyOrDoors} already exist for Job# {edited.JobNumber} in the database!",
+                            "Entry Exist!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
                     PrepAndPaintDB.EditnewJob(edited);
-                    this.DialogResult = DialogResult.OK;
+                    DialogResult = DialogResult.OK;
                     Close();
                 }
                 else
                 {
-                    
                     PrepAndPaintModel newJob = new PrepAndPaintModel()
                     {
                         StartDate = maskStartDate.Text,
@@ -89,10 +97,20 @@ namespace PrepandPaint
                         NewProcess = checkNewProcess.Checked,
                         Comments = txtComments.Text
                     };
+                    foreach (var item in prepAndPaintModels)
+                    {
+                        if (item.JobNumber == newJob.JobNumber && item.BodyOrDoors == newJob.BodyOrDoors)
+                        {
+                            MessageBox.Show($"Item: {newJob.BodyOrDoors} already exist for Job# {newJob.JobNumber} in the database!",
+                            "Entry Exist!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
                     PrepAndPaintDB.AddnewJob(newJob);
                     jobId = newJob.Id;
-                    this.DialogResult = DialogResult.OK;
+                    DialogResult = DialogResult.OK;
                     Close();
+
                 }
             }
         }

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PrepandPaint.Models
 {
@@ -39,7 +40,7 @@ namespace PrepandPaint.Models
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
-                connection.Insert(newJob);
+                connection.Insert(newJob);             
             }
         }
 

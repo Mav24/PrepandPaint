@@ -15,6 +15,7 @@ namespace PrepandPaint
 {
     public partial class MainWindow : Form
     {
+        List<PrepAndPaintModel> prepAndPaintModels;
         public MainWindow()
         {
             InitializeComponent();
@@ -23,7 +24,8 @@ namespace PrepandPaint
 
         private void GetInfo()
         {
-            dataGridView.DataSource = PrepAndPaintDB.GetNewData();
+            prepAndPaintModels = PrepAndPaintDB.GetNewData();
+            dataGridView.DataSource = prepAndPaintModels;
             SetDataGridView();
         }
 
