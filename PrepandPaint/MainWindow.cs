@@ -31,9 +31,11 @@ namespace PrepandPaint
 
         private void SetDataGridView()
         {
+            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
             dataGridView.Columns[0].Visible = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Columns[1].HeaderText = "Job#";
             dataGridView.Columns[2].HeaderText = "Item";
             dataGridView.Columns[3].HeaderText = "Start Date";
@@ -92,11 +94,14 @@ namespace PrepandPaint
                     MessageBox.Show("Sorry you need to select an entry to delete!", "Error", MessageBoxButtons.OK);
                 }
             }
-            
-
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            EditJob();
+        }
+
+        private void EditJob()
         {
             PassWord passWord = new PassWord();
             DialogResult result = passWord.ShowDialog();
@@ -141,7 +146,6 @@ namespace PrepandPaint
                     MessageBox.Show("No Record selected to edit!", "No Records selected");
                 }
             }
-            
         }
 
         private void BtnSearch_Click(object sender, EventArgs e)
@@ -208,6 +212,11 @@ namespace PrepandPaint
                 GetInfo();
             }
 
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditJob();
         }
     }
 }

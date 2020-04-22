@@ -54,7 +54,6 @@ namespace PrepandPaint
         {
             if (IsValidate())
             {
-                List<PrepAndPaintModel> prepAndPaintModels = PrepAndPaintDB.GetNewData();
                 if (edit)
                 {
                     PrepAndPaintModel edited = new PrepAndPaintModel()
@@ -70,21 +69,13 @@ namespace PrepandPaint
                         NewProcess = checkNewProcess.Checked,
                         Comments = txtComments.Text
                     };
-                    foreach (var item in prepAndPaintModels)
-                    {
-                        if (item.JobNumber == edited.JobNumber && item.BodyOrDoors == edited.BodyOrDoors)
-                        {
-                            MessageBox.Show($"Item: {edited.BodyOrDoors} already exist for Job# {edited.JobNumber} in the database!",
-                            "Entry Exist!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
                     PrepAndPaintDB.EditnewJob(edited);
                     DialogResult = DialogResult.OK;
                     Close();
                 }
                 else
                 {
+                    List<PrepAndPaintModel> prepAndPaintModels = PrepAndPaintDB.GetNewData();
                     PrepAndPaintModel newJob = new PrepAndPaintModel()
                     {
                         StartDate = maskStartDate.Text,
