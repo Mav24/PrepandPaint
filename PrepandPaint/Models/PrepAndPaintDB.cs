@@ -86,7 +86,7 @@ namespace PrepandPaint.Models
             {
                 List<PrepAndPaintModel> prepAndPaintList = new List<PrepAndPaintModel>();
                 prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
-                return prepAndPaintList.OrderBy(x => x.PaintDate).ToList();
+                return prepAndPaintList.OrderByDescending(x => x.PaintDate).ToList();
             }
         }
 
