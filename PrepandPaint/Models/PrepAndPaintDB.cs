@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,8 +27,7 @@ namespace PrepandPaint.Models
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
-                string databasename;
-                connection.Backup(destinationPath, databasename = "main");
+                connection.Backup(destinationPath, "main");
             }
         }
 
@@ -62,12 +62,31 @@ namespace PrepandPaint.Models
             }
         }
 
-        public static List<PrepAndPaintModel> Search(string jobNumber)
+        public static List<PrepAndPaintModel> SearchJobNumber(string jobNumber)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 List<PrepAndPaintModel> search = connection.Table<PrepAndPaintModel>().ToList();
                 return search.Where(x => x.JobNumber.Contains(jobNumber)).OrderBy(d => d.StartDate).ToList();
+            }
+        }
+
+        public static List<PrepAndPaintModel> SearchItem(string item)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                List<PrepAndPaintModel> searchItem = connection.Table<PrepAndPaintModel>().ToList();
+                return searchItem.Where(x => x.BodyOrDoors.Contains(item)).OrderBy(d => d.PaintDate).ToList();
+            }
+        }
+
+        public static List<PrepAndPaintModel> SortByDate()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                List<PrepAndPaintModel> prepAndPaintList = new List<PrepAndPaintModel>();
+                prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
+                return prepAndPaintList.OrderBy(x => x.PaintDate).ToList();
             }
         }
 

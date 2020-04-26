@@ -150,14 +150,34 @@ namespace PrepandPaint
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtSearch.Text))
-            {
-                dataGridView.DataSource = PrepAndPaintDB.Search(txtSearch.Text);
-                SetDataGridView();
-            }
-            else
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
                 MessageBox.Show("Enter a job number to search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (rdoItem.Checked)
+            {
+                dataGridView.DataSource = PrepAndPaintDB.SearchItem(txtSearch.Text);
+                if (dataGridView.Rows.Count <= 0)
+                {
+                    MessageBox.Show($"Nothing found with name {txtSearch.Text}", "Nothing found!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    SetDataGridView();
+                }
+                
+            }
+            else if (rdoJobNumber.Checked)
+            {
+               dataGridView.DataSource = PrepAndPaintDB.SearchJobNumber(txtSearch.Text);
+                if (dataGridView.Rows.Count <= 0)
+                {
+                    MessageBox.Show($"Nothing found for Job# {txtSearch.Text}", "Nothing found!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    SetDataGridView();
+                }
             }
             
         }
@@ -217,6 +237,18 @@ namespace PrepandPaint
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             EditJob();
+        }
+
+        private void CheckedChanged(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+            txtSearch.Focus();
+        }
+
+        private void sortToolStripButton_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = PrepAndPaintDB.SortByDate();
+            SetDataGridView();
         }
     }
 }
