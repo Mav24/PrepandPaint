@@ -249,6 +249,7 @@ namespace PrepandPaint
         {
             dataGridView.DataSource = PrepAndPaintDB.SortByDate();
             SetDataGridView();
+            txtSearch.Clear();
         }
     }
 }
