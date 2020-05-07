@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PrepandPaint.Models
 {
-    public class JobColours
+    public class JobColoursModel
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PrepandPaint
 {
-    public partial class Colours : Form
+    public partial class AddColours : Form
     {
-        public Colours()
+        public AddColours()
         {
             InitializeComponent();
             PopulateDataGrid();
@@ -34,12 +34,12 @@ namespace PrepandPaint
             }
             else
             {
-                string colourAndCode = $"{txtColourCode.Text} - {txtColour.Text}";
-                JobColours newJobColour = new JobColours()
+                string colourAndCode = $"{txtColourCode.Text.ToUpper()} - {txtColour.Text.ToUpper()}";
+                JobColoursModel newJobColour = new JobColoursModel()
                 {
                     Colour = colourAndCode
                 };
-                List<JobColours> colours = PrepAndPaintDB.GetJobColours();
+                List<JobColoursModel> colours = PrepAndPaintDB.GetJobColours();
                 foreach (var item in colours)
                 {
                     if (item.Colour == newJobColour.Colour)
@@ -63,7 +63,7 @@ namespace PrepandPaint
                 string itemname = colourDataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString();
                 if (MessageBox.Show($"Are you sure you wanted to delete Item: {itemname}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    JobColours deleteId = new JobColours()
+                    JobColoursModel deleteId = new JobColoursModel()
                     {
                         Id = id
                     };

@@ -1,6 +1,6 @@
 ﻿namespace PrepandPaint
 {
-    partial class Colours
+    partial class AddColours
     {
         /// <summary>
         /// Required designer variable.

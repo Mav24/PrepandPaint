@@ -153,7 +153,7 @@ namespace PrepandPaint
 
         private void BtnAddColour_Click(object sender, EventArgs e)
         {
-            Colours addJobColour = new Colours();
+            AddColours addJobColour = new AddColours();
             DialogResult result = addJobColour.ShowDialog();
             if (result == DialogResult.OK)
             {
