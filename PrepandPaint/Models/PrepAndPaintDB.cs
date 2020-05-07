@@ -165,5 +165,32 @@ namespace PrepandPaint.Models
         }
 
         #endregion
+
+        public static List<JobColours> GetJobColours()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.CreateTable<JobColours>();
+                List<JobColours> jobColours = new List<JobColours>();
+                jobColours = connection.Table<JobColours>().ToList();
+                return jobColours;
+            }
+        }
+
+        public static void AddColour(JobColours jobColours)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Insert(jobColours);
+            }
+        }
+
+        public static void DeleteColour(JobColours id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Delete(id);
+            }
+        }
     }
 }

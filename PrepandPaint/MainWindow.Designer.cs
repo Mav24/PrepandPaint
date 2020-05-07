@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,6 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdoJobNumber = new System.Windows.Forms.RadioButton();
+            this.rdoItem = new System.Windows.Forms.RadioButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -47,6 +51,7 @@
             this.BtnRestoreDataBase = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.sortToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.BtnExit = new System.Windows.Forms.Button();
             this.BtnLoadAll = new System.Windows.Forms.Button();
             this.BtnSearch = new System.Windows.Forms.Button();
@@ -54,15 +59,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoItem = new System.Windows.Forms.RadioButton();
-            this.rdoJobNumber = new System.Windows.Forms.RadioButton();
-            this.sortToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -137,6 +139,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1538, 124);
             this.panel1.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdoJobNumber);
+            this.groupBox1.Controls.Add(this.rdoItem);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(198, 68);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search By:";
+            // 
+            // rdoJobNumber
+            // 
+            this.rdoJobNumber.AutoSize = true;
+            this.rdoJobNumber.Checked = true;
+            this.rdoJobNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoJobNumber.Location = new System.Drawing.Point(6, 30);
+            this.rdoJobNumber.Name = "rdoJobNumber";
+            this.rdoJobNumber.Size = new System.Drawing.Size(69, 28);
+            this.rdoJobNumber.TabIndex = 0;
+            this.rdoJobNumber.TabStop = true;
+            this.rdoJobNumber.Text = "Job#";
+            this.rdoJobNumber.UseVisualStyleBackColor = true;
+            this.rdoJobNumber.CheckedChanged += new System.EventHandler(this.CheckedChanged);
+            // 
+            // rdoItem
+            // 
+            this.rdoItem.AutoSize = true;
+            this.rdoItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoItem.Location = new System.Drawing.Point(81, 30);
+            this.rdoItem.Name = "rdoItem";
+            this.rdoItem.Size = new System.Drawing.Size(63, 28);
+            this.rdoItem.TabIndex = 0;
+            this.rdoItem.Text = "Item";
+            this.rdoItem.UseVisualStyleBackColor = true;
+            this.rdoItem.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // toolStrip1
             // 
@@ -233,6 +273,15 @@
             this.helpToolStripButton.Text = "He&lp";
             this.helpToolStripButton.Click += new System.EventHandler(this.helpToolStripButton_Click);
             // 
+            // sortToolStripButton
+            // 
+            this.sortToolStripButton.Image = global::PrepandPaint.Properties.Resources.Preview_16x16;
+            this.sortToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sortToolStripButton.Name = "sortToolStripButton";
+            this.sortToolStripButton.Size = new System.Drawing.Size(182, 29);
+            this.sortToolStripButton.Text = "Sort By Paint Date";
+            this.sortToolStripButton.Click += new System.EventHandler(this.sortToolStripButton_Click);
+            // 
             // BtnExit
             // 
             this.BtnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -292,52 +341,9 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // groupBox1
+            // notifyIcon1
             // 
-            this.groupBox1.Controls.Add(this.rdoJobNumber);
-            this.groupBox1.Controls.Add(this.rdoItem);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(198, 68);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Search By:";
-            // 
-            // rdoItem
-            // 
-            this.rdoItem.AutoSize = true;
-            this.rdoItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoItem.Location = new System.Drawing.Point(81, 30);
-            this.rdoItem.Name = "rdoItem";
-            this.rdoItem.Size = new System.Drawing.Size(63, 28);
-            this.rdoItem.TabIndex = 0;
-            this.rdoItem.Text = "Item";
-            this.rdoItem.UseVisualStyleBackColor = true;
-            this.rdoItem.CheckedChanged += new System.EventHandler(this.CheckedChanged);
-            // 
-            // rdoJobNumber
-            // 
-            this.rdoJobNumber.AutoSize = true;
-            this.rdoJobNumber.Checked = true;
-            this.rdoJobNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoJobNumber.Location = new System.Drawing.Point(6, 30);
-            this.rdoJobNumber.Name = "rdoJobNumber";
-            this.rdoJobNumber.Size = new System.Drawing.Size(69, 28);
-            this.rdoJobNumber.TabIndex = 0;
-            this.rdoJobNumber.TabStop = true;
-            this.rdoJobNumber.Text = "Job#";
-            this.rdoJobNumber.UseVisualStyleBackColor = true;
-            this.rdoJobNumber.CheckedChanged += new System.EventHandler(this.CheckedChanged);
-            // 
-            // sortToolStripButton
-            // 
-            this.sortToolStripButton.Image = global::PrepandPaint.Properties.Resources.Preview_16x16;
-            this.sortToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sortToolStripButton.Name = "sortToolStripButton";
-            this.sortToolStripButton.Size = new System.Drawing.Size(182, 29);
-            this.sortToolStripButton.Text = "Sort By Paint Date";
-            this.sortToolStripButton.Click += new System.EventHandler(this.sortToolStripButton_Click);
+            this.notifyIcon1.Text = "notifyIcon1";
             // 
             // MainWindow
             // 
@@ -357,11 +363,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -392,6 +398,7 @@
         private System.Windows.Forms.RadioButton rdoJobNumber;
         private System.Windows.Forms.RadioButton rdoItem;
         private System.Windows.Forms.ToolStripButton sortToolStripButton;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 

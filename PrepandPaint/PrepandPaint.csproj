@@ -101,6 +101,12 @@
     <Compile Include="AddNotes.Designer.cs">
       <DependentUpon>AddNotes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Colours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colours.Designer.cs">
+      <DependentUpon>Colours.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,7 @@
     </Compile>
     <Compile Include="Models\DataBase.cs" />
     <Compile Include="Models\ItemsModel.cs" />
+    <Compile Include="Models\JobColours.cs" />
     <Compile Include="Models\PrepAndPaintDB.cs" />
     <Compile Include="Models\PrepAndPaintModel.cs" />
     <Compile Include="Models\SupervisorNotesModel.cs" />
@@ -135,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNotes.resx">
       <DependentUpon>AddNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Colours.resx">
+      <DependentUpon>Colours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

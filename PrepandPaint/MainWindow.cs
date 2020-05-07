@@ -40,7 +40,7 @@ namespace PrepandPaint
             dataGridView.Columns[2].HeaderText = "Item";
             dataGridView.Columns[3].HeaderText = "Start Date";
             dataGridView.Columns[5].HeaderText = "Paint Date";
-            dataGridView.Columns[8].HeaderText = "New-Process";
+            dataGridView.Columns[9].HeaderText = "New-Process";
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -120,8 +120,8 @@ namespace PrepandPaint
                         PaintDate = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
                         Painter = dataGridView.Rows[selectedRowIndex].Cells[6].Value.ToString(),
                         Booth = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
-                        NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[8].Value,
-                        Comments = dataGridView.Rows[selectedRowIndex].Cells[9].Value.ToString(),
+                        NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[9].Value,
+                        Comments = dataGridView.Rows[selectedRowIndex].Cells[10].Value.ToString(),
                     };
                     AddJob addJob = new AddJob();
                     addJob.editJob = editJob;

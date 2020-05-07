@@ -18,6 +18,7 @@ namespace PrepandPaint.Models
         public string PaintDate { get; set; }
         public string Painter { get; set; }
         public string Booth { get; set; }
+        public string Colour { get; set; }
         public bool NewProcess { get; set; }
         public string Comments { get; set; }
     }

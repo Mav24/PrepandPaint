@@ -21,6 +21,7 @@ namespace PrepandPaint
         {
             InitializeComponent();
             GetItemList();
+            GetColours();
         }
 
         private void AddJob_Load(object sender, EventArgs e)
@@ -33,6 +34,7 @@ namespace PrepandPaint
             else
             {
                 cmboBodyDoors.SelectedIndex = -1;
+                cmboColour.SelectedIndex = -1;
             }
             
         }
@@ -46,6 +48,7 @@ namespace PrepandPaint
             txtPainter.Text = editJob.Painter;
             cmboBodyDoors.Text = editJob.BodyOrDoors;
             cmboBooth.SelectedItem = editJob.Booth;
+            cmboColour.Text = editJob.Colour;
             checkNewProcess.Checked = editJob.NewProcess;
             txtComments.Text = editJob.Comments;
         }
@@ -66,6 +69,7 @@ namespace PrepandPaint
                         Painter = txtPainter.Text,
                         BodyOrDoors = cmboBodyDoors.Text,
                         Booth = cmboBooth.Text,
+                        Colour = cmboColour.Text,
                         NewProcess = checkNewProcess.Checked,
                         Comments = txtComments.Text
                     };
@@ -85,6 +89,7 @@ namespace PrepandPaint
                         Painter = txtPainter.Text,
                         BodyOrDoors = cmboBodyDoors.Text,
                         Booth = cmboBooth.Text,
+                        Colour = cmboColour.Text,
                         NewProcess = checkNewProcess.Checked,
                         Comments = txtComments.Text
                     };
@@ -135,9 +140,26 @@ namespace PrepandPaint
             cmboBodyDoors.DataSource = PrepAndPaintDB.GetItemsList();
         }
 
+        private void GetColours()
+        {
+            cmboColour.DisplayMember = "Colour";
+            cmboColour.DataSource = PrepAndPaintDB.GetJobColours();
+        }
+
         private void BtnAddItem_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Add new item!", BtnAddItem);
+        }
+
+        private void BtnAddColour_Click(object sender, EventArgs e)
+        {
+            Colours addJobColour = new Colours();
+            DialogResult result = addJobColour.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                GetColours();
+                cmboColour.SelectedIndex = -1;
+            }
         }
     }
 }
