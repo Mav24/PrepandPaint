@@ -119,8 +119,9 @@ namespace PrepandPaint
         private bool IsValidate()
         {
             return
-                Validator.IsPresent(txtJobNumber);
-                //Validator.DateFormat(maskStartDate);
+                Validator.IsPresent(txtJobNumber) &&
+                Validator.ComboBoxItemSelected(cmboBodyDoors) &&
+                Validator.ComboBoxItemSelected(cmboColour);
         }
 
         private void BtnAddItem_Click(object sender, EventArgs e)
@@ -128,6 +129,11 @@ namespace PrepandPaint
             AddItem addNewItem = new AddItem();
             DialogResult result = addNewItem.ShowDialog();
             if (result == DialogResult.OK)
+            {
+                GetItemList();
+                cmboBodyDoors.Text = addNewItem.itemName;
+            }
+            else if (result == DialogResult.Cancel)
             {
                 GetItemList();
                 cmboBodyDoors.SelectedIndex = -1;
@@ -144,11 +150,7 @@ namespace PrepandPaint
         {
             cmboColour.DisplayMember = "Colour";
             cmboColour.DataSource = PrepAndPaintDB.GetJobColours();
-        }
-
-        private void BtnAddItem_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.Show("Add new item!", BtnAddItem);
+            cmboColour.SelectedIndex = -1;
         }
 
         private void BtnAddColour_Click(object sender, EventArgs e)
@@ -158,8 +160,22 @@ namespace PrepandPaint
             if (result == DialogResult.OK)
             {
                 GetColours();
+                cmboColour.Text = addJobColour.colourName;
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                GetColours();
                 cmboColour.SelectedIndex = -1;
             }
+        }
+
+        private void BtnAddColour_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Add new Colour!", BtnAddColour);
+        }
+        private void BtnAddItem_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Add new item!", BtnAddItem);
         }
     }
 }

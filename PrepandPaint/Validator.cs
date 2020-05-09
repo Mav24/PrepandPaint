@@ -33,5 +33,16 @@ namespace PrepandPaint
             }
             return false;
         }
+
+        public static bool ComboBoxItemSelected(ComboBox comboBox)
+        {
+            if (comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show($"You need to select a {comboBox.Tag}", "Selection need!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                comboBox.Focus();
+                return false;
+            }
+            return true;
+        }
     }
 }

@@ -13,6 +13,7 @@ namespace PrepandPaint
 {
     public partial class AddColours : Form
     {
+        public string colourName;
         public AddColours()
         {
             InitializeComponent();
@@ -28,11 +29,7 @@ namespace PrepandPaint
 
         private void BtnAddColour_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtColourCode.Text) && string.IsNullOrWhiteSpace(txtColour.Text))
-            {
-                MessageBox.Show("Please fill in all values!", "Error no value!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
+            if (IsValidate())
             {
                 string colourAndCode = $"{txtColourCode.Text.ToUpper()} - {txtColour.Text.ToUpper()}";
                 JobColoursModel newJobColour = new JobColoursModel()
@@ -49,9 +46,16 @@ namespace PrepandPaint
                         return;
                     }
                 }
-                PrepAndPaintDB.AddColour(newJobColour);
+                colourName = PrepAndPaintDB.AddColour(newJobColour);
                 DialogResult = DialogResult.OK;
             }
+        }
+
+        private bool IsValidate()
+        {
+            return
+                Validator.IsPresent(txtColourCode) &&
+                Validator.IsPresent(txtColour);
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace PrepandPaint
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

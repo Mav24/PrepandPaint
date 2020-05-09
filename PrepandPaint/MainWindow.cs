@@ -34,8 +34,9 @@ namespace PrepandPaint
             dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
             dataGridView.Columns[0].Visible = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridView.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns[1].HeaderText = "Job#";
             dataGridView.Columns[2].HeaderText = "Item";
             dataGridView.Columns[3].HeaderText = "Start Date";
@@ -86,7 +87,6 @@ namespace PrepandPaint
                         {
                             dataGridView.Rows[selectedRowIndex - 1].Cells[1].Selected = true;
                         }
-                        
                     }
                 }
                 else
@@ -107,9 +107,19 @@ namespace PrepandPaint
             DialogResult result = passWord.ShowDialog();
             if (result == DialogResult.OK)
             {
+                // Need to fix edit option for colour when editing
                 if (dataGridView.SelectedRows.Count > 0)
                 {
+                    string colourValue;
                     int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
+                    if (dataGridView.Rows[selectedRowIndex].Cells[8].Value == null)
+                    {
+                        colourValue = null;
+                    }
+                    else
+                    {
+                        colourValue = dataGridView.Rows[selectedRowIndex].Cells[8].Value.ToString();
+                    }
                     PrepAndPaintModel editJob = new PrepAndPaintModel()
                     {
                         Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value,
@@ -120,6 +130,7 @@ namespace PrepandPaint
                         PaintDate = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
                         Painter = dataGridView.Rows[selectedRowIndex].Cells[6].Value.ToString(),
                         Booth = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
+                        Colour = colourValue,
                         NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[9].Value,
                         Comments = dataGridView.Rows[selectedRowIndex].Cells[10].Value.ToString(),
                     };

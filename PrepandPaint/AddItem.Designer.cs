@@ -63,6 +63,7 @@
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(225, 22);
             this.txtItemName.TabIndex = 1;
+            this.txtItemName.Tag = "Item Name";
             // 
             // BtnDelete
             // 

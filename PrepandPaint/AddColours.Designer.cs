@@ -77,6 +77,7 @@
             this.txtColourCode.Name = "txtColourCode";
             this.txtColourCode.Size = new System.Drawing.Size(220, 22);
             this.txtColourCode.TabIndex = 1;
+            this.txtColourCode.Tag = "Colour Code";
             // 
             // label2
             // 
@@ -122,8 +123,9 @@
             this.txtColour.Name = "txtColour";
             this.txtColour.Size = new System.Drawing.Size(220, 22);
             this.txtColour.TabIndex = 3;
+            this.txtColour.Tag = "Colour";
             // 
-            // Colours
+            // AddColours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -141,7 +143,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Colours";
+            this.Name = "AddColours";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Colour";

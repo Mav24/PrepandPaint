@@ -137,6 +137,7 @@
             this.cmboBodyDoors.Name = "cmboBodyDoors";
             this.cmboBodyDoors.Size = new System.Drawing.Size(238, 23);
             this.cmboBodyDoors.TabIndex = 13;
+            this.cmboBodyDoors.Tag = "Item";
             // 
             // label6
             // 
@@ -153,7 +154,7 @@
             this.BtnSave.Location = new System.Drawing.Point(198, 506);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
-            this.BtnSave.TabIndex = 19;
+            this.BtnSave.TabIndex = 22;
             this.BtnSave.Text = "&Save";
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -163,7 +164,7 @@
             this.BtnCancel.Location = new System.Drawing.Point(279, 506);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
-            this.BtnCancel.TabIndex = 20;
+            this.BtnCancel.TabIndex = 23;
             this.BtnCancel.Text = "&Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -175,7 +176,7 @@
             this.label7.Location = new System.Drawing.Point(21, 358);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 20);
-            this.label7.TabIndex = 15;
+            this.label7.TabIndex = 18;
             this.label7.Text = "Booth:";
             // 
             // cmboBooth
@@ -188,7 +189,7 @@
             this.cmboBooth.Location = new System.Drawing.Point(119, 355);
             this.cmboBooth.Name = "cmboBooth";
             this.cmboBooth.Size = new System.Drawing.Size(238, 23);
-            this.cmboBooth.TabIndex = 16;
+            this.cmboBooth.TabIndex = 19;
             // 
             // label8
             // 
@@ -197,7 +198,7 @@
             this.label8.Location = new System.Drawing.Point(21, 408);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 20);
-            this.label8.TabIndex = 17;
+            this.label8.TabIndex = 20;
             this.label8.Text = "Comments:";
             // 
             // txtComments
@@ -207,7 +208,7 @@
             this.txtComments.Name = "txtComments";
             this.txtComments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtComments.Size = new System.Drawing.Size(238, 78);
-            this.txtComments.TabIndex = 18;
+            this.txtComments.TabIndex = 21;
             // 
             // maskStartDate
             // 
@@ -280,7 +281,7 @@
             this.label11.Location = new System.Drawing.Point(21, 306);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 20);
-            this.label11.TabIndex = 23;
+            this.label11.TabIndex = 15;
             this.label11.Text = "Colour:";
             // 
             // cmboColour
@@ -290,7 +291,8 @@
             this.cmboColour.Location = new System.Drawing.Point(117, 307);
             this.cmboColour.Name = "cmboColour";
             this.cmboColour.Size = new System.Drawing.Size(238, 23);
-            this.cmboColour.TabIndex = 13;
+            this.cmboColour.TabIndex = 16;
+            this.cmboColour.Tag = "Colour";
             // 
             // BtnAddColour
             // 
@@ -298,10 +300,10 @@
             this.BtnAddColour.Location = new System.Drawing.Point(361, 306);
             this.BtnAddColour.Name = "BtnAddColour";
             this.BtnAddColour.Size = new System.Drawing.Size(38, 23);
-            this.BtnAddColour.TabIndex = 14;
+            this.BtnAddColour.TabIndex = 17;
             this.BtnAddColour.UseVisualStyleBackColor = true;
             this.BtnAddColour.Click += new System.EventHandler(this.BtnAddColour_Click);
-            this.BtnAddColour.MouseHover += new System.EventHandler(this.BtnAddItem_MouseHover);
+            this.BtnAddColour.MouseHover += new System.EventHandler(this.BtnAddColour_MouseHover);
             // 
             // AddJob
             // 

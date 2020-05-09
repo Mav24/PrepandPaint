@@ -14,6 +14,7 @@ namespace PrepandPaint
     public partial class AddItem : Form
     {
         List<ItemsModel> itemsList;
+        public string itemName;
         public AddItem()
         {
             InitializeComponent();
@@ -29,9 +30,10 @@ namespace PrepandPaint
 
         private void BtnAddNewItem_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtItemName.Text))
+            if (IsValidate())
             {
-                char[] a = txtItemName.Text.ToCharArray();
+
+                char[] a = txtItemName.Text.ToLower().ToCharArray();
                 a[0] = char.ToUpper(a[0]);
                 ItemsModel newItem = new ItemsModel()
                 {
@@ -47,15 +49,22 @@ namespace PrepandPaint
                         return;
                     }
                 }
-                PrepAndPaintDB.AddItem(newItem);
+                itemName = PrepAndPaintDB.AddItem(newItem);
                 DialogResult = DialogResult.OK;
             }
-            MessageBox.Show("Please enter an item in the text box!", "Error no value!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
+            
+        }
+
+        private bool IsValidate()
+        {
+            return
+                Validator.IsPresent(txtItemName);
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = DialogResult.Cancel;
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)

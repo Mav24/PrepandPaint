@@ -140,11 +140,12 @@ namespace PrepandPaint.Models
             }
         }
 
-        public static void AddItem(ItemsModel item)
+        public static string AddItem(ItemsModel item)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 connection.Insert(item);
+                return item.ItemName;
             }
         }
 
@@ -177,11 +178,12 @@ namespace PrepandPaint.Models
             }
         }
 
-        public static void AddColour(JobColoursModel jobColours)
+        public static string AddColour(JobColoursModel jobColours)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 connection.Insert(jobColours);
+                return jobColours.Colour;
             }
         }
 
