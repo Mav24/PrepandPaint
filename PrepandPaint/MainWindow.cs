@@ -107,9 +107,10 @@ namespace PrepandPaint
             DialogResult result = passWord.ShowDialog();
             if (result == DialogResult.OK)
             {
-                // Need to fix edit option for colour when editing
+                
                 if (dataGridView.SelectedRows.Count > 0)
                 {
+                    // This checks for null value in colour cell.
                     string colourValue;
                     int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
                     if (dataGridView.Rows[selectedRowIndex].Cells[8].Value == null)
