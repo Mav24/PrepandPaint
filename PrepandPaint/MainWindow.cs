@@ -228,7 +228,7 @@ namespace PrepandPaint
 
         private void BtnBackUpDataBase_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.FileName = "mainlog";
+            saveFileDialog1.FileName = "mainlog_" + DateTime.Now.Date.ToString("MM-dd-yyyy");
             saveFileDialog1.Filter = "Data base format (*.db)|*.db";
             saveFileDialog1.ShowDialog();
             PrepAndPaintDB.BackUpDataBase(saveFileDialog1.FileName);
