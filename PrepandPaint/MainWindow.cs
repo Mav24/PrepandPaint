@@ -228,8 +228,8 @@ namespace PrepandPaint
 
         private void BtnBackUpDataBase_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.FileName = "mainlog_" + DateTime.Now.Date.ToString("MM-dd-yyyy");
-            saveFileDialog1.Filter = "Data base format (*.db)|*.db";
+            saveFileDialog1.FileName = "PrepAndPaintDataBase_" + DateTime.Now.Date.ToString("MM-dd-yyyy");
+            saveFileDialog1.Filter = "PrepAndPaint databases (*.db)|*.db";
             saveFileDialog1.ShowDialog();
             PrepAndPaintDB.BackUpDataBase(saveFileDialog1.FileName);
         }
@@ -237,7 +237,7 @@ namespace PrepandPaint
         private void BtnRestoreDataBase_Click(object sender, EventArgs e)
         {
             openFileDialog1.FileName = "";
-            openFileDialog1.Filter = "Database format (*.db)|*.db";
+            openFileDialog1.Filter = "PrepAndPaint databases (*.db)|*.db";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 PrepAndPaintDB.RestoreDataBase(openFileDialog1.FileName);
