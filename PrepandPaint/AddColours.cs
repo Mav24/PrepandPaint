@@ -60,7 +60,7 @@ namespace PrepandPaint
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (colourDataGridView.SelectedRows.Count > 0)
+            try
             {
                 int selectedRowIndex = colourDataGridView.SelectedCells[0].RowIndex;
                 int id = (int)colourDataGridView.Rows[selectedRowIndex].Cells[0].Value;
@@ -73,11 +73,11 @@ namespace PrepandPaint
                     };
                     PrepAndPaintDB.DeleteColour(deleteId);
                     PopulateDataGrid();
-                } 
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Sorry you need to select an entry to delete!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Nothing selected to delete!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

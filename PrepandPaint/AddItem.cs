@@ -69,17 +69,24 @@ namespace PrepandPaint
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            int selectedRowIndex = itemDataGridView.SelectedCells[0].RowIndex;
-            int id = (int)itemDataGridView.Rows[selectedRowIndex].Cells[0].Value;
-            string itemname = itemDataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString();
-            if (MessageBox.Show($"Are you sure you wanted to delete Item: {itemname}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                ItemsModel deleteId = new ItemsModel()
+                int selectedRowIndex = itemDataGridView.SelectedCells[0].RowIndex;
+                int id = (int)itemDataGridView.Rows[selectedRowIndex].Cells[0].Value;
+                string itemname = itemDataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString();
+                if (MessageBox.Show($"Are you sure you wanted to delete Item: {itemname}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Id = id
-                };
-                PrepAndPaintDB.DeleteItem(deleteId);
-                PopulateListView();
+                    ItemsModel deleteId = new ItemsModel()
+                    {
+                        Id = id
+                    };
+                    PrepAndPaintDB.DeleteItem(deleteId);
+                    PopulateListView();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nothing selected to delete!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
