@@ -100,6 +100,10 @@ namespace PrepandPaint
         {
             EditJob();
         }
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditJob();
+        }
 
         private void EditJob()
         {
@@ -244,11 +248,6 @@ namespace PrepandPaint
                 GetInfo();
             }
 
-        }
-
-        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            EditJob();
         }
 
         private void CheckedChanged(object sender, EventArgs e)
