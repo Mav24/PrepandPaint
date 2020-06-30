@@ -1,15 +1,4 @@
-# Prep And Paint
-This is a logging program with a SQLite Database. 
-
-- Log job numbers
-
-- Who worked on the job
-
-- Option for comments on each job entry
-
-- Database backup option
-
-![Image of Program](/ProgramScreenShot.png)
+BSD 2-Clause License
 
 Copyright (c) 2020, Murray Duke
 All rights reserved.
