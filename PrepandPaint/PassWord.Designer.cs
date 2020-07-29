@@ -111,6 +111,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Login";
+            this.Load += new System.EventHandler(this.PassWord_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -47,6 +47,7 @@ namespace PrepandPaint
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            CheckForAdmins();
             if (AdminLogin)
             {
                 AddNewJob();
@@ -86,6 +87,7 @@ namespace PrepandPaint
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+            CheckForAdmins();
             if (AdminLogin)
             {
                 DeleteEntry();
@@ -131,6 +133,7 @@ namespace PrepandPaint
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
+            CheckForAdmins();
             if (AdminLogin)
             {
                 EditJob();
@@ -148,6 +151,7 @@ namespace PrepandPaint
         }
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            CheckForAdmins();
             if (AdminLogin)
             {
                 EditJob();
@@ -161,6 +165,17 @@ namespace PrepandPaint
                     AdminLogin = passWord.adminLogin;
                     EditJob();
                 }
+            }
+        }
+
+        private void CheckForAdmins()
+        {
+            List<AdminsModel> adminList = PrepAndPaintDB.GetAdmins();
+            if (adminList.Count == 0)
+            {
+                MessageBox.Show("Currently there are no admins. Please create an admin account to protect your data", "No Admins!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                AdminPage adminPage = new AdminPage();
+                adminPage.ShowDialog();
             }
         }
 
@@ -293,14 +308,18 @@ namespace PrepandPaint
 
         private void BtnRestoreDataBase_Click(object sender, EventArgs e)
         {
-            openFileDialog1.FileName = "";
-            openFileDialog1.Filter = "PrepAndPaint databases (*.db)|*.db";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            PassWord passWord = new PassWord();
+            DialogResult result = passWord.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                PrepAndPaintDB.RestoreDataBase(openFileDialog1.FileName);
-                GetInfo();
+                openFileDialog1.FileName = "";
+                openFileDialog1.Filter = "PrepAndPaint databases (*.db)|*.db";
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    PrepAndPaintDB.RestoreDataBase(openFileDialog1.FileName);
+                    GetInfo();
+                }
             }
-
         }
 
         private void CheckedChanged(object sender, EventArgs e)
@@ -318,6 +337,7 @@ namespace PrepandPaint
 
         private void toolStripAdminButton_Click(object sender, EventArgs e)
         {
+            CheckForAdmins();
             PassWord passWord = new PassWord();
             DialogResult result = passWord.ShowDialog();
             if (result == DialogResult.OK)
@@ -325,6 +345,7 @@ namespace PrepandPaint
                 AdminPage adminPage = new AdminPage();
                 adminPage.ShowDialog();
             }
+
         }
     }
 }

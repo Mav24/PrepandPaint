@@ -119,7 +119,6 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\AdminLoginInfo.cs" />
     <Compile Include="Models\AdminsModel.cs" />
     <Compile Include="Models\DataBase.cs" />
     <Compile Include="Models\ItemsModel.cs" />

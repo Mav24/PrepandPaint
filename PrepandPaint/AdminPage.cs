@@ -84,7 +84,16 @@ namespace PrepandPaint
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Close();
+            List<AdminsModel> adminList = PrepAndPaintDB.GetAdmins();
+            if (adminList.Count == 0)
+            {
+                MessageBox.Show("Currently there are no admins. Please create an admin account to protect your data", "No Admins!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                Close();
+            }
         }
     }
 }

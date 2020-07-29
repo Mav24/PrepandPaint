@@ -20,6 +20,16 @@ namespace PrepandPaint
             InitializeComponent();
         }
         //public string adminLogin = "Maverick";
+        private void PassWord_Load(object sender, EventArgs e)
+        {
+            List<AdminsModel> adminList = PrepAndPaintDB.GetAdmins();
+            if (adminList.Count == 0)
+            {
+                MessageBox.Show("Currently there are no admins. Please create an admin account to protect your data", "No Admins!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                AdminPage adminPage = new AdminPage();
+                adminPage.ShowDialog();
+            }
+        }
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
@@ -35,18 +45,21 @@ namespace PrepandPaint
                 }
                 else
                 {
-                    MessageBox.Show("Sorry password wrong! Please try again", "Incorrect PassWord!");
+                    MessageBox.Show("Sorry login or password wrong! Please try again", "Incorrect PassWord!");
                     txtPassWord.Clear();
                     txtPassWord.Focus();
                     return;
                 }
             }
-            
+
+
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        
     }
 }
