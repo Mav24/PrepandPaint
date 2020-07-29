@@ -41,7 +41,7 @@ namespace PrepandPaint
                 {
                     if (item.Colour == newJobColour.Colour)
                     {
-                        MessageBox.Show($" Colour: {newJobColour.Colour} already exist", "Exit already!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($" Colour: {newJobColour.Colour} already exist", "Exist already!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtColourCode.Focus();
                         return;
                     }
@@ -65,7 +65,7 @@ namespace PrepandPaint
                 int selectedRowIndex = colourDataGridView.SelectedCells[0].RowIndex;
                 int id = (int)colourDataGridView.Rows[selectedRowIndex].Cells[0].Value;
                 string itemname = colourDataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString();
-                if (MessageBox.Show($"Are you sure you wanted to delete Item: {itemname}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show($"Are you sure you want to delete Item: {itemname}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     JobColoursModel deleteId = new JobColoursModel()
                     {

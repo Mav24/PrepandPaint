@@ -16,6 +16,7 @@ namespace PrepandPaint
     public partial class MainWindow : Form
     {
         List<PrepAndPaintModel> prepAndPaintModels;
+        public bool AdminLogin;
         public MainWindow()
         {
             InitializeComponent();
@@ -46,9 +47,28 @@ namespace PrepandPaint
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            if (AdminLogin)
+            {
+                AddNewJob();
+            }
+            else
+            {
+                PassWord password = new PassWord();
+                DialogResult result = password.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    AdminLogin = password.adminLogin;
+                    AddNewJob();
+                }
+
+            }
+        }
+
+        private void AddNewJob()
+        {
             AddJob addJob = new AddJob();
             DialogResult result = addJob.ShowDialog();
-            
+
             if (result == DialogResult.OK)
             {
                 GetInfo();
@@ -66,101 +86,134 @@ namespace PrepandPaint
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            PassWord passWord = new PassWord();
-            DialogResult result = passWord.ShowDialog();
-            if (result == DialogResult.OK)
+            if (AdminLogin)
             {
-                if (dataGridView.SelectedRows.Count > 0)
+                DeleteEntry();
+            }
+            else
+            {
+                PassWord passWord = new PassWord();
+                DialogResult result = passWord.ShowDialog();
+                if (result == DialogResult.OK)
                 {
-                    int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
-                    int Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value;
-                    string job = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString();
-                    if (MessageBox.Show($"Are you sure you want to delete job #{job}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    AdminLogin = true;
+                    DeleteEntry();
+                }
+            }
+        }
+
+        private void DeleteEntry()
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
+                int Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value;
+                string job = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString();
+                if (MessageBox.Show($"Are you sure you want to delete job #{job}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    PrepAndPaintModel deleteId = new PrepAndPaintModel()
                     {
-                        PrepAndPaintModel deleteId = new PrepAndPaintModel()
-                        {
-                            Id = Id
-                        };
-                        PrepAndPaintDB.Delete(deleteId);
-                        GetInfo();
-                        if (selectedRowIndex > 0)
-                        {
-                            dataGridView.Rows[selectedRowIndex - 1].Cells[1].Selected = true;
-                        }
+                        Id = Id
+                    };
+                    PrepAndPaintDB.Delete(deleteId);
+                    GetInfo();
+                    if (selectedRowIndex > 0)
+                    {
+                        dataGridView.Rows[selectedRowIndex - 1].Cells[1].Selected = true;
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Sorry you need to select an entry to delete!", "Error", MessageBoxButtons.OK);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Sorry you need to select an entry to delete!", "Error", MessageBoxButtons.OK);
             }
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            EditJob();
+            if (AdminLogin)
+            {
+                EditJob();
+            }
+            else
+            {
+                PassWord passWord = new PassWord();
+                DialogResult result = passWord.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    AdminLogin = passWord.adminLogin;
+                    EditJob();
+                }
+            }
         }
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            EditJob();
+            if (AdminLogin)
+            {
+                EditJob();
+            }
+            else
+            {
+                PassWord passWord = new PassWord();
+                DialogResult result = passWord.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    AdminLogin = passWord.adminLogin;
+                    EditJob();
+                }
+            }
         }
 
         private void EditJob()
         {
-            PassWord passWord = new PassWord();
-            DialogResult result = passWord.ShowDialog();
-            if (result == DialogResult.OK)
+            if (dataGridView.SelectedRows.Count > 0)
             {
-                
-                if (dataGridView.SelectedRows.Count > 0)
+                // This checks for null value in colour cell.
+                string colourValue;
+                int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
+                if (dataGridView.Rows[selectedRowIndex].Cells[8].Value == null)
                 {
-                    // This checks for null value in colour cell.
-                    string colourValue;
-                    int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
-                    if (dataGridView.Rows[selectedRowIndex].Cells[8].Value == null)
-                    {
-                        colourValue = null;
-                    }
-                    else
-                    {
-                        colourValue = dataGridView.Rows[selectedRowIndex].Cells[8].Value.ToString();
-                    }
-                    PrepAndPaintModel editJob = new PrepAndPaintModel()
-                    {
-                        Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value,
-                        JobNumber = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString(),
-                        BodyOrDoors = dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString(),
-                        StartDate = dataGridView.Rows[selectedRowIndex].Cells[3].Value.ToString(),
-                        Prepper = dataGridView.Rows[selectedRowIndex].Cells[4].Value.ToString(),
-                        PaintDate = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
-                        Painter = dataGridView.Rows[selectedRowIndex].Cells[6].Value.ToString(),
-                        Booth = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
-                        Colour = colourValue,
-                        NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[9].Value,
-                        Comments = dataGridView.Rows[selectedRowIndex].Cells[10].Value.ToString(),
-                    };
-                    AddJob addJob = new AddJob();
-                    addJob.editJob = editJob;
-                    addJob.edit = true;
-                    DialogResult results = addJob.ShowDialog();
-                    if (results == DialogResult.OK)
-                    {
-                        GetInfo();
-                        txtSearch.Clear();
-                        foreach (DataGridViewRow row in dataGridView.Rows)
-                        {
-                            if (row.Cells[0].Value.Equals(editJob.Id))
-                            {
-                                row.Cells[1].Selected = true;
-                                dataGridView.FirstDisplayedScrollingRowIndex = row.Index;
-                            }
-                        }
-                    }
+                    colourValue = null;
                 }
                 else
                 {
-                    MessageBox.Show("No Record selected to edit!", "No Records selected");
+                    colourValue = dataGridView.Rows[selectedRowIndex].Cells[8].Value.ToString();
                 }
+                PrepAndPaintModel editJob = new PrepAndPaintModel()
+                {
+                    Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value,
+                    JobNumber = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString(),
+                    BodyOrDoors = dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString(),
+                    StartDate = dataGridView.Rows[selectedRowIndex].Cells[3].Value.ToString(),
+                    Prepper = dataGridView.Rows[selectedRowIndex].Cells[4].Value.ToString(),
+                    PaintDate = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
+                    Painter = dataGridView.Rows[selectedRowIndex].Cells[6].Value.ToString(),
+                    Booth = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
+                    Colour = colourValue,
+                    NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[9].Value,
+                    Comments = dataGridView.Rows[selectedRowIndex].Cells[10].Value.ToString(),
+                };
+                AddJob addJob = new AddJob();
+                addJob.editJob = editJob;
+                addJob.edit = true;
+                DialogResult results = addJob.ShowDialog();
+                if (results == DialogResult.OK)
+                {
+                    GetInfo();
+                    txtSearch.Clear();
+                    foreach (DataGridViewRow row in dataGridView.Rows)
+                    {
+                        if (row.Cells[0].Value.Equals(editJob.Id))
+                        {
+                            row.Cells[1].Selected = true;
+                            dataGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Record selected to edit!", "No Records selected");
             }
         }
 
@@ -261,6 +314,17 @@ namespace PrepandPaint
             dataGridView.DataSource = PrepAndPaintDB.SortByDate();
             SetDataGridView();
             txtSearch.Clear();
+        }
+
+        private void toolStripAdminButton_Click(object sender, EventArgs e)
+        {
+            PassWord passWord = new PassWord();
+            DialogResult result = passWord.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                AdminPage adminPage = new AdminPage();
+                adminPage.ShowDialog();
+            }
         }
     }
 }

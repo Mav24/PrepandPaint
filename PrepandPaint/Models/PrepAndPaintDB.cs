@@ -194,5 +194,32 @@ namespace PrepandPaint.Models
                 connection.Delete(id);
             }
         }
+
+        public static List<AdminsModel> GetAdmins()
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.CreateTable<AdminsModel>();
+                List<AdminsModel> admins = new List<AdminsModel>();
+                admins = connection.Table<AdminsModel>().ToList();
+                return admins;
+            }
+        }
+
+        public static void AddAdmin(AdminsModel admin)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Insert(admin);
+            }
+        }
+
+        public static void DeleteAdmin(AdminsModel id)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                connection.Delete(id);
+            }
+        }
     }
 }

@@ -107,12 +107,20 @@
     <Compile Include="AddColours.Designer.cs">
       <DependentUpon>AddColours.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPage.Designer.cs">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminLoginInfo.cs" />
+    <Compile Include="Models\AdminsModel.cs" />
     <Compile Include="Models\DataBase.cs" />
     <Compile Include="Models\ItemsModel.cs" />
     <Compile Include="Models\JobColoursModel.cs" />
@@ -145,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddColours.resx">
       <DependentUpon>AddColours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
