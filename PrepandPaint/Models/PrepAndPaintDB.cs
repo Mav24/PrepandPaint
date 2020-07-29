@@ -196,6 +196,7 @@ namespace PrepandPaint.Models
             }
         }
 
+        #region Admin Stuff
         public static List<AdminsModel> GetAdmins()
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
@@ -221,6 +222,7 @@ namespace PrepandPaint.Models
             {
                 connection.Delete(id);
             }
-        }
+        } 
+        #endregion
     }
 }

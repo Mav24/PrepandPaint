@@ -203,6 +203,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hnet.com-image.ico" />
+    <None Include="Resources\Administrator-icon.png" />
     <None Include="Resources\Preview_16x16.png" />
     <None Include="Resources\Search_24x24.png" />
     <None Include="Resources\Search_48x48.png" />

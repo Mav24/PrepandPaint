@@ -13,6 +13,7 @@ namespace PrepandPaint
 {
     public partial class Notes : Form
     {
+        public bool AdminLogin;
         public Notes()
         {
             InitializeComponent();
@@ -24,6 +25,24 @@ namespace PrepandPaint
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            if (AdminLogin)
+            {
+                AddNewNote();
+            }
+            else
+            {
+                PassWord passWord = new PassWord();
+                DialogResult result = passWord.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    AdminLogin = true;
+                    AddNewNote();
+                }
+            }
+        }
+
+        private void AddNewNote()
         {
             AddNotes addNotes = new AddNotes();
             DialogResult result = addNotes.ShowDialog();
@@ -51,6 +70,24 @@ namespace PrepandPaint
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+            if (AdminLogin)
+            {
+                DeleteNote();
+            }
+            else
+            {
+                PassWord passWord = new PassWord();
+                DialogResult result = passWord.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    AdminLogin = true;
+                    DeleteNote();
+                }
+            }
+        }
+
+        private void DeleteNote()
+        {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int selectedRowIndex = dataGridView1.SelectedCells[0].RowIndex;
@@ -69,7 +106,6 @@ namespace PrepandPaint
             {
                 MessageBox.Show("Sorry you need to select an entry to delete!", "Error", MessageBoxButtons.OK);
             }
-            
         }
 
         private void BtnCancel_Click_1(object sender, EventArgs e)

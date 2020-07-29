@@ -45,7 +45,7 @@ namespace PrepandPaint
                 }
                 else
                 {
-                    MessageBox.Show("Sorry login or password wrong! Please try again", "Incorrect PassWord!");
+                    MessageBox.Show("Sorry login or password wrong! Please try again", "Incorrect PassWord!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtPassWord.Clear();
                     txtPassWord.Focus();
                     return;
