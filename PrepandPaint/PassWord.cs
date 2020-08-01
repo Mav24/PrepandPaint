@@ -19,7 +19,6 @@ namespace PrepandPaint
         {
             InitializeComponent();
         }
-        //public string adminLogin = "Maverick";
         private void PassWord_Load(object sender, EventArgs e)
         {
             List<AdminsModel> adminList = PrepAndPaintDB.GetAdmins();
