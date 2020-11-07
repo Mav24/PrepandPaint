@@ -79,7 +79,7 @@ namespace PrepandPaint
                 }
                 else
                 {
-                    List<PrepAndPaintModel> prepAndPaintModels = PrepAndPaintDB.GetNewData();
+                    
                     PrepAndPaintModel newJob = new PrepAndPaintModel()
                     {
                         StartDate = maskStartDate.Text,
@@ -93,22 +93,29 @@ namespace PrepandPaint
                         NewProcess = checkNewProcess.Checked,
                         Comments = txtComments.Text
                     };
-                    foreach (var item in prepAndPaintModels)
-                    {
-                        if (item.JobNumber == newJob.JobNumber && item.BodyOrDoors == newJob.BodyOrDoors)
-                        {
-                            MessageBox.Show($"Item: {newJob.BodyOrDoors} already exist for Job# {newJob.JobNumber} in the database!",
-                            "Entry Exist!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                    }
-                    PrepAndPaintDB.AddnewJob(newJob);
-                    jobId = newJob.Id;
-                    DialogResult = DialogResult.OK;
-                    Close();
+
+                    CheckIfExist(newJob);
 
                 }
             }
+        }
+
+        private void CheckIfExist(PrepAndPaintModel newJob)
+        {
+            List<PrepAndPaintModel> prepAndPaintModels = PrepAndPaintDB.GetNewData();
+            foreach (var item in prepAndPaintModels)
+            {
+                if (item.JobNumber == newJob.JobNumber && item.BodyOrDoors == newJob.BodyOrDoors)
+                {
+                    MessageBox.Show($"Item: {newJob.BodyOrDoors} already exist for Job# {newJob.JobNumber} in the database!",
+                    "Entry Exist!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            PrepAndPaintDB.AddnewJob(newJob);
+            jobId = newJob.Id;
+            DialogResult = DialogResult.OK;
+            Close();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

@@ -77,7 +77,7 @@ namespace PrepandPaint.Models
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 List<PrepAndPaintModel> searchItem = connection.Table<PrepAndPaintModel>().ToList();
-                return searchItem.Where(x => x.BodyOrDoors.Contains(item)).OrderByDescending(d => d.PaintDate).ToList();
+                return searchItem.Where(x => x.BodyOrDoors.Equals(item, StringComparison.OrdinalIgnoreCase)).OrderByDescending(d => d.PaintDate).ToList();
             }
         }
 
