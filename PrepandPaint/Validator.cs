@@ -44,5 +44,16 @@ namespace PrepandPaint
             }
             return true;
         }
+
+        public static bool ItemSelectionBox(ListBox listBox)
+        {
+            if (listBox.SelectedIndex == -1)
+            {
+                MessageBox.Show($"You need to select an item", "Selection need!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                listBox.Focus();
+                return false;
+            }
+            return true;
+        }
     }
 }

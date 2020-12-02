@@ -54,14 +54,7 @@ namespace PrepandPaint
             }
             else
             {
-                PassWord password = new PassWord();
-                DialogResult result = password.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    AdminLogin = password.adminLogin;
-                    AddNewJob();
-                }
-
+                Login();
             }
         }
 
@@ -346,6 +339,55 @@ namespace PrepandPaint
                 adminPage.ShowDialog();
             }
 
+        }
+
+        private void createJobToolStripButton_Click(object sender, EventArgs e)
+        {
+            CheckForAdmins();
+            if (AdminLogin)
+            {
+                CreateNewJob();
+            }
+            else
+            {
+                PassWord password = new PassWord();
+                DialogResult result = password.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    AdminLogin = password.adminLogin;
+                    CreateNewJob();
+                }
+            }
+        }
+
+        private void Login()
+        {
+            PassWord password = new PassWord();
+            DialogResult result = password.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                AdminLogin = password.adminLogin;
+                AddNewJob();
+            }
+        }
+
+        private void CreateNewJob()
+        {
+            CreateJob createJob = new CreateJob();
+            DialogResult result = createJob.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                GetInfo();
+                txtSearch.Clear();
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    if (row.Cells[0].Value.Equals(createJob.jobId))
+                    {
+                        row.Cells[1].Selected = true;
+                        dataGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                    }
+                }
+            }
         }
     }
 }

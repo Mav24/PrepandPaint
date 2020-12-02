@@ -45,7 +45,6 @@
             this.cmboBooth = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtComments = new System.Windows.Forms.TextBox();
-            this.maskStartDate = new System.Windows.Forms.MaskedTextBox();
             this.maskPaintDate = new System.Windows.Forms.MaskedTextBox();
             this.checkNewProcess = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,6 +54,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cmboColour = new System.Windows.Forms.ComboBox();
             this.BtnAddColour = new System.Windows.Forms.Button();
+            this.maskStartDate = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -210,16 +210,6 @@
             this.txtComments.Size = new System.Drawing.Size(238, 78);
             this.txtComments.TabIndex = 21;
             // 
-            // maskStartDate
-            // 
-            this.maskStartDate.Location = new System.Drawing.Point(119, 66);
-            this.maskStartDate.Mask = "00/00/0000";
-            this.maskStartDate.Name = "maskStartDate";
-            this.maskStartDate.Size = new System.Drawing.Size(120, 21);
-            this.maskStartDate.TabIndex = 4;
-            this.maskStartDate.Tag = "Start Date";
-            this.maskStartDate.ValidatingType = typeof(System.DateTime);
-            // 
             // maskPaintDate
             // 
             this.maskPaintDate.Location = new System.Drawing.Point(118, 176);
@@ -305,6 +295,16 @@
             this.BtnAddColour.Click += new System.EventHandler(this.BtnAddColour_Click);
             this.BtnAddColour.MouseHover += new System.EventHandler(this.BtnAddColour_MouseHover);
             // 
+            // maskStartDate
+            // 
+            this.maskStartDate.Location = new System.Drawing.Point(117, 65);
+            this.maskStartDate.Mask = "00/00/0000";
+            this.maskStartDate.Name = "maskStartDate";
+            this.maskStartDate.Size = new System.Drawing.Size(120, 21);
+            this.maskStartDate.TabIndex = 4;
+            this.maskStartDate.Tag = "Start Date";
+            this.maskStartDate.ValidatingType = typeof(System.DateTime);
+            // 
             // AddJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -365,7 +365,6 @@
         private System.Windows.Forms.ComboBox cmboBooth;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtComments;
-        private System.Windows.Forms.MaskedTextBox maskStartDate;
         private System.Windows.Forms.MaskedTextBox maskPaintDate;
         private System.Windows.Forms.CheckBox checkNewProcess;
         private System.Windows.Forms.Label label9;
@@ -375,5 +374,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmboColour;
         private System.Windows.Forms.Button BtnAddColour;
+        private System.Windows.Forms.MaskedTextBox maskStartDate;
     }
 }
