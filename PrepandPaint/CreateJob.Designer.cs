@@ -56,7 +56,7 @@ namespace PrepandPaint
             this.label2.Location = new System.Drawing.Point(12, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(127, 20);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 3;
             this.label2.Text = "&Items To Create:";
             // 
             // label3
@@ -65,7 +65,7 @@ namespace PrepandPaint
             this.label3.Location = new System.Drawing.Point(12, 315);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 5;
             this.label3.Text = "Colour:";
             // 
             // txtJobNumber
@@ -81,14 +81,14 @@ namespace PrepandPaint
             this.cmboColour.Location = new System.Drawing.Point(77, 312);
             this.cmboColour.Name = "cmboColour";
             this.cmboColour.Size = new System.Drawing.Size(259, 28);
-            this.cmboColour.TabIndex = 5;
+            this.cmboColour.TabIndex = 6;
             // 
             // btnCreate
             // 
             this.btnCreate.Location = new System.Drawing.Point(253, 360);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(83, 28);
-            this.btnCreate.TabIndex = 8;
+            this.btnCreate.TabIndex = 9;
             this.btnCreate.Text = "C&reate";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -98,7 +98,7 @@ namespace PrepandPaint
             this.btnCancel.Location = new System.Drawing.Point(164, 360);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(83, 28);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -111,7 +111,7 @@ namespace PrepandPaint
             this.itemsListBox.Name = "itemsListBox";
             this.itemsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.itemsListBox.Size = new System.Drawing.Size(266, 144);
-            this.itemsListBox.TabIndex = 3;
+            this.itemsListBox.TabIndex = 4;
             this.itemsListBox.Tag = "Item";
             // 
             // BtnAddColour
@@ -120,7 +120,7 @@ namespace PrepandPaint
             this.BtnAddColour.Location = new System.Drawing.Point(342, 312);
             this.BtnAddColour.Name = "BtnAddColour";
             this.BtnAddColour.Size = new System.Drawing.Size(34, 28);
-            this.BtnAddColour.TabIndex = 6;
+            this.BtnAddColour.TabIndex = 7;
             this.BtnAddColour.UseVisualStyleBackColor = true;
             this.BtnAddColour.Click += new System.EventHandler(this.BtnAddColour_Click);
             // 
@@ -131,7 +131,7 @@ namespace PrepandPaint
             this.checkNewProcess.Location = new System.Drawing.Point(70, 70);
             this.checkNewProcess.Name = "checkNewProcess";
             this.checkNewProcess.Size = new System.Drawing.Size(120, 24);
-            this.checkNewProcess.TabIndex = 1;
+            this.checkNewProcess.TabIndex = 2;
             this.checkNewProcess.Text = "&New Process";
             this.checkNewProcess.UseVisualStyleBackColor = true;
             // 

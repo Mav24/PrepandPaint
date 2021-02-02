@@ -124,34 +124,37 @@
             // 
             // txtPainter
             // 
-            this.txtPainter.Location = new System.Drawing.Point(117, 219);
+            this.txtPainter.Location = new System.Drawing.Point(115, 219);
             this.txtPainter.Name = "txtPainter";
-            this.txtPainter.Size = new System.Drawing.Size(238, 21);
+            this.txtPainter.Size = new System.Drawing.Size(240, 21);
             this.txtPainter.TabIndex = 11;
             // 
             // cmboBodyDoors
             // 
             this.cmboBodyDoors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboBodyDoors.FormattingEnabled = true;
-            this.cmboBodyDoors.Location = new System.Drawing.Point(116, 261);
+            this.cmboBodyDoors.IntegralHeight = false;
+            this.cmboBodyDoors.ItemHeight = 15;
+            this.cmboBodyDoors.Location = new System.Drawing.Point(116, 305);
+            this.cmboBodyDoors.MaxDropDownItems = 10;
             this.cmboBodyDoors.Name = "cmboBodyDoors";
-            this.cmboBodyDoors.Size = new System.Drawing.Size(238, 23);
-            this.cmboBodyDoors.TabIndex = 13;
+            this.cmboBodyDoors.Size = new System.Drawing.Size(303, 23);
+            this.cmboBodyDoors.TabIndex = 15;
             this.cmboBodyDoors.Tag = "Item";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 261);
+            this.label6.Location = new System.Drawing.Point(20, 304);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 20);
-            this.label6.TabIndex = 12;
+            this.label6.TabIndex = 14;
             this.label6.Text = "Item";
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(198, 506);
+            this.BtnSave.Location = new System.Drawing.Point(306, 541);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
             this.BtnSave.TabIndex = 22;
@@ -161,7 +164,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(279, 506);
+            this.BtnCancel.Location = new System.Drawing.Point(387, 541);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 23;
@@ -173,10 +176,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(21, 358);
+            this.label7.Location = new System.Drawing.Point(21, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 20);
-            this.label7.TabIndex = 18;
+            this.label7.TabIndex = 12;
             this.label7.Text = "Booth:";
             // 
             // cmboBooth
@@ -186,16 +189,16 @@
             this.cmboBooth.Items.AddRange(new object[] {
             "New",
             "Old"});
-            this.cmboBooth.Location = new System.Drawing.Point(119, 355);
+            this.cmboBooth.Location = new System.Drawing.Point(115, 260);
             this.cmboBooth.Name = "cmboBooth";
             this.cmboBooth.Size = new System.Drawing.Size(238, 23);
-            this.cmboBooth.TabIndex = 19;
+            this.cmboBooth.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 408);
+            this.label8.Location = new System.Drawing.Point(19, 391);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 20);
             this.label8.TabIndex = 20;
@@ -203,11 +206,11 @@
             // 
             // txtComments
             // 
-            this.txtComments.Location = new System.Drawing.Point(119, 408);
+            this.txtComments.Location = new System.Drawing.Point(115, 391);
             this.txtComments.Multiline = true;
             this.txtComments.Name = "txtComments";
             this.txtComments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtComments.Size = new System.Drawing.Size(238, 78);
+            this.txtComments.Size = new System.Drawing.Size(303, 114);
             this.txtComments.TabIndex = 21;
             // 
             // maskPaintDate
@@ -236,7 +239,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(254, 176);
+            this.label9.Location = new System.Drawing.Point(255, 177);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 20);
             this.label9.TabIndex = 22;
@@ -256,10 +259,10 @@
             // BtnAddItem
             // 
             this.BtnAddItem.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
-            this.BtnAddItem.Location = new System.Drawing.Point(361, 261);
+            this.BtnAddItem.Location = new System.Drawing.Point(424, 304);
             this.BtnAddItem.Name = "BtnAddItem";
             this.BtnAddItem.Size = new System.Drawing.Size(38, 23);
-            this.BtnAddItem.TabIndex = 14;
+            this.BtnAddItem.TabIndex = 16;
             this.BtnAddItem.UseVisualStyleBackColor = true;
             this.BtnAddItem.Click += new System.EventHandler(this.BtnAddItem_Click);
             this.BtnAddItem.MouseHover += new System.EventHandler(this.BtnAddItem_MouseHover);
@@ -268,29 +271,31 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(21, 306);
+            this.label11.Location = new System.Drawing.Point(20, 350);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 20);
-            this.label11.TabIndex = 15;
+            this.label11.TabIndex = 17;
             this.label11.Text = "Colour:";
             // 
             // cmboColour
             // 
             this.cmboColour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmboColour.FormattingEnabled = true;
-            this.cmboColour.Location = new System.Drawing.Point(117, 307);
+            this.cmboColour.IntegralHeight = false;
+            this.cmboColour.Location = new System.Drawing.Point(116, 350);
+            this.cmboColour.MaxDropDownItems = 10;
             this.cmboColour.Name = "cmboColour";
-            this.cmboColour.Size = new System.Drawing.Size(238, 23);
-            this.cmboColour.TabIndex = 16;
+            this.cmboColour.Size = new System.Drawing.Size(302, 23);
+            this.cmboColour.TabIndex = 18;
             this.cmboColour.Tag = "Colour";
             // 
             // BtnAddColour
             // 
             this.BtnAddColour.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
-            this.BtnAddColour.Location = new System.Drawing.Point(361, 306);
+            this.BtnAddColour.Location = new System.Drawing.Point(424, 350);
             this.BtnAddColour.Name = "BtnAddColour";
             this.BtnAddColour.Size = new System.Drawing.Size(38, 23);
-            this.BtnAddColour.TabIndex = 17;
+            this.BtnAddColour.TabIndex = 19;
             this.BtnAddColour.UseVisualStyleBackColor = true;
             this.BtnAddColour.Click += new System.EventHandler(this.BtnAddColour_Click);
             this.BtnAddColour.MouseHover += new System.EventHandler(this.BtnAddColour_MouseHover);
@@ -309,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 611);
+            this.ClientSize = new System.Drawing.Size(516, 611);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.BtnAddColour);
             this.Controls.Add(this.BtnAddItem);
