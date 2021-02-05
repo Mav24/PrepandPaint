@@ -39,6 +39,7 @@ namespace PrepandPaint
             this.itemsListBox = new System.Windows.Forms.ListBox();
             this.BtnAddColour = new System.Windows.Forms.Button();
             this.checkNewProcess = new System.Windows.Forms.CheckBox();
+            this.checkBoxWashBay = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -78,7 +79,10 @@ namespace PrepandPaint
             // cmboColour
             // 
             this.cmboColour.FormattingEnabled = true;
+            this.cmboColour.IntegralHeight = false;
+            this.cmboColour.ItemHeight = 20;
             this.cmboColour.Location = new System.Drawing.Point(77, 312);
+            this.cmboColour.MaxDropDownItems = 10;
             this.cmboColour.Name = "cmboColour";
             this.cmboColour.Size = new System.Drawing.Size(259, 28);
             this.cmboColour.TabIndex = 6;
@@ -135,11 +139,23 @@ namespace PrepandPaint
             this.checkNewProcess.Text = "&New Process";
             this.checkNewProcess.UseVisualStyleBackColor = true;
             // 
+            // checkBoxWashBay
+            // 
+            this.checkBoxWashBay.AutoSize = true;
+            this.checkBoxWashBay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxWashBay.Location = new System.Drawing.Point(196, 70);
+            this.checkBoxWashBay.Name = "checkBoxWashBay";
+            this.checkBoxWashBay.Size = new System.Drawing.Size(100, 24);
+            this.checkBoxWashBay.TabIndex = 2;
+            this.checkBoxWashBay.Text = "&Wash Bay";
+            this.checkBoxWashBay.UseVisualStyleBackColor = true;
+            // 
             // CreateJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 432);
+            this.Controls.Add(this.checkBoxWashBay);
             this.Controls.Add(this.checkNewProcess);
             this.Controls.Add(this.BtnAddColour);
             this.Controls.Add(this.itemsListBox);
@@ -174,5 +190,6 @@ namespace PrepandPaint
         private System.Windows.Forms.ListBox itemsListBox;
         private System.Windows.Forms.Button BtnAddColour;
         private System.Windows.Forms.CheckBox checkNewProcess;
+        private System.Windows.Forms.CheckBox checkBoxWashBay;
     }
 }

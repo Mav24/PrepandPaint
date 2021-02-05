@@ -17,6 +17,8 @@ namespace PrepandPaint
         public PrepAndPaintModel editJob;
         public bool edit;
         public int jobId;
+        string startDate;
+        string paintDate;
         public AddJob()
         {
             InitializeComponent();
@@ -42,14 +44,31 @@ namespace PrepandPaint
         private void FillTextBoxes()
         {
             txtJobNumber.Text = editJob.JobNumber;
-            maskStartDate.Text = editJob.StartDate;
+            if (editJob.StartDate == "")
+            {
+                dateTimePickerStartDate.Value = DateTime.Now;
+                dateTimePickerStartDate.Checked = false;
+            }
+            else
+            {
+                dateTimePickerStartDate.Value = DateTime.Parse(editJob.StartDate);
+            }
             txtPrepper.Text = editJob.Prepper;
-            maskPaintDate.Text = editJob.PaintDate;
+            if (editJob.PaintDate == "")
+            {
+                dateTimePickerPaintDate.Value = DateTime.Now;
+                dateTimePickerPaintDate.Checked = false;
+            }
+            else
+            {
+                dateTimePickerPaintDate.Value = DateTime.Parse(editJob.PaintDate);
+            }
             txtPainter.Text = editJob.Painter;
             cmboBodyDoors.Text = editJob.BodyOrDoors;
             cmboBooth.SelectedItem = editJob.Booth;
             cmboColour.Text = editJob.Colour;
             checkNewProcess.Checked = editJob.NewProcess;
+            checkWashBay.Checked = editJob.WashBay;
             txtComments.Text = editJob.Comments;
         }
 
@@ -59,18 +78,21 @@ namespace PrepandPaint
             {
                 if (edit)
                 {
+                    CheckStartDate();
+                    CheckPaintDate();
                     PrepAndPaintModel edited = new PrepAndPaintModel()
                     {
                         Id = editJob.Id,
-                        StartDate = maskStartDate.Text,
+                        StartDate = startDate,
                         JobNumber = txtJobNumber.Text,
                         Prepper = txtPrepper.Text,
-                        PaintDate = maskPaintDate.Text,
+                        PaintDate = paintDate,
                         Painter = txtPainter.Text,
                         BodyOrDoors = cmboBodyDoors.Text,
                         Booth = cmboBooth.Text,
                         Colour = cmboColour.Text,
                         NewProcess = checkNewProcess.Checked,
+                        WashBay = checkWashBay.Checked,
                         Comments = txtComments.Text
                     };
                     PrepAndPaintDB.EditnewJob(edited);
@@ -79,24 +101,51 @@ namespace PrepandPaint
                 }
                 else
                 {
-                    
+                    CheckStartDate();
+                    CheckPaintDate();
                     PrepAndPaintModel newJob = new PrepAndPaintModel()
                     {
-                        StartDate = maskStartDate.Text,
+                        StartDate = startDate,
                         JobNumber = txtJobNumber.Text,
                         Prepper = txtPrepper.Text,
-                        PaintDate = maskPaintDate.Text,
+                        PaintDate = paintDate,
                         Painter = txtPainter.Text,
                         BodyOrDoors = cmboBodyDoors.Text,
                         Booth = cmboBooth.Text,
                         Colour = cmboColour.Text,
                         NewProcess = checkNewProcess.Checked,
+                        WashBay = checkWashBay.Checked,
                         Comments = txtComments.Text
                     };
 
                     CheckIfExist(newJob);
 
                 }
+            }
+        }
+
+        private void CheckPaintDate()
+        {
+
+            if (dateTimePickerPaintDate.Checked)
+            {
+                paintDate = dateTimePickerPaintDate.Value.ToShortDateString();
+            }
+            else
+            {
+                paintDate = "";
+            }
+        }
+
+        private void CheckStartDate()
+        {
+            if (dateTimePickerStartDate.Checked)
+            {
+                startDate = dateTimePickerStartDate.Value.ToShortDateString();
+            }
+            else
+            {
+                startDate = "";
             }
         }
 

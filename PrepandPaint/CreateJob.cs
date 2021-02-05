@@ -37,7 +37,9 @@ namespace PrepandPaint
                         Booth = "",
                         Colour = cmboColour.Text,
                         Comments = "",
-                        NewProcess = checkNewProcess.Checked
+                        NewProcess = checkNewProcess.Checked,
+                        WashBay = checkBoxWashBay.Checked
+                        
                     };
 
                     CheckIfExist(newJob);

@@ -187,6 +187,8 @@ namespace PrepandPaint
                 {
                     colourValue = dataGridView.Rows[selectedRowIndex].Cells[8].Value.ToString();
                 }
+
+
                 PrepAndPaintModel editJob = new PrepAndPaintModel()
                 {
                     Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value,
@@ -199,7 +201,8 @@ namespace PrepandPaint
                     Booth = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
                     Colour = colourValue,
                     NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[9].Value,
-                    Comments = dataGridView.Rows[selectedRowIndex].Cells[10].Value.ToString(),
+                    WashBay = (bool)dataGridView.Rows[selectedRowIndex].Cells[10].Value,
+                    Comments = dataGridView.Rows[selectedRowIndex].Cells[11].Value.ToString(),
                 };
                 AddJob addJob = new AddJob();
                 addJob.editJob = editJob;
