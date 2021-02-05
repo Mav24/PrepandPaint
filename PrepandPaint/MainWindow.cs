@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PrepandPaint.Models;
 using System.IO;
+using OfficeOpenXml;
 
 namespace PrepandPaint
 {
@@ -393,5 +394,29 @@ namespace PrepandPaint
             }
         }
 
+        private void toolStripExportToExcel_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            {
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        var fileInfo = new FileInfo(saveFileDialog.FileName);
+                        using (var package = new ExcelPackage(fileInfo))
+                        {
+                            ExcelWorksheet excelWorksheet = package.Workbook.Worksheets.Add("Paint");
+                            excelWorksheet.Cells.LoadFromCollection<PrepAndPaintModel>(dataGridView.DataSource as List<PrepAndPaintModel>, true);
+                            package.Save();
+                        }
+                        MessageBox.Show($"You have successfully exported your data to an excel file to {fileInfo}.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
     }
 }

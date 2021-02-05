@@ -42,25 +42,26 @@
             this.rdoJobNumber = new System.Windows.Forms.RadioButton();
             this.rdoItem = new System.Windows.Forms.RadioButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.createJobToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.BtnBackUpDataBase = new System.Windows.Forms.ToolStripButton();
-            this.BtnRestoreDataBase = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.sortToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripAdminButton = new System.Windows.Forms.ToolStripButton();
-            this.BtnExit = new System.Windows.Forms.Button();
             this.BtnLoadAll = new System.Windows.Forms.Button();
-            this.BtnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.createJobToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.BtnBackUpDataBase = new System.Windows.Forms.ToolStripButton();
+            this.BtnRestoreDataBase = new System.Windows.Forms.ToolStripButton();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.sortToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripAdminButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripExportToExcel = new System.Windows.Forms.ToolStripButton();
+            this.BtnExit = new System.Windows.Forms.Button();
+            this.BtnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -194,7 +195,8 @@
             this.toolStripSeparator1,
             this.helpToolStripButton,
             this.sortToolStripButton,
-            this.toolStripAdminButton});
+            this.toolStripAdminButton,
+            this.toolStripExportToExcel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -202,9 +204,56 @@
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 32);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
+            // 
+            // BtnLoadAll
+            // 
+            this.BtnLoadAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLoadAll.Location = new System.Drawing.Point(473, 77);
+            this.BtnLoadAll.Name = "BtnLoadAll";
+            this.BtnLoadAll.Size = new System.Drawing.Size(100, 34);
+            this.BtnLoadAll.TabIndex = 3;
+            this.BtnLoadAll.Text = "&Load All";
+            this.BtnLoadAll.UseVisualStyleBackColor = true;
+            this.BtnLoadAll.Click += new System.EventHandler(this.BtnLoadAll_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(216, 79);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(196, 29);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 124);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1538, 708);
+            this.panel2.TabIndex = 4;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            // 
             // createJobToolStripButton
             // 
-            this.createJobToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("createJobToolStripButton.Image")));
+            this.createJobToolStripButton.Image = global::PrepandPaint.Properties.Resources.Add_16x161;
             this.createJobToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.createJobToolStripButton.Name = "createJobToolStripButton";
             this.createJobToolStripButton.Size = new System.Drawing.Size(121, 29);
@@ -238,11 +287,6 @@
             this.toolStripButton1.Text = "Notes";
             this.toolStripButton1.Click += new System.EventHandler(this.BtnSupervisorNotes_Click);
             // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 32);
-            // 
             // BtnBackUpDataBase
             // 
             this.BtnBackUpDataBase.Image = global::PrepandPaint.Properties.Resources.Archive_16x16;
@@ -260,11 +304,6 @@
             this.BtnRestoreDataBase.Size = new System.Drawing.Size(177, 29);
             this.BtnRestoreDataBase.Text = "&Restore Database";
             this.BtnRestoreDataBase.Click += new System.EventHandler(this.BtnRestoreDataBase_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
             // 
             // helpToolStripButton
             // 
@@ -293,6 +332,15 @@
             this.toolStripAdminButton.Text = "Admin";
             this.toolStripAdminButton.Click += new System.EventHandler(this.toolStripAdminButton_Click);
             // 
+            // toolStripExportToExcel
+            // 
+            this.toolStripExportToExcel.Image = global::PrepandPaint.Properties.Resources.Save_16x16;
+            this.toolStripExportToExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripExportToExcel.Name = "toolStripExportToExcel";
+            this.toolStripExportToExcel.Size = new System.Drawing.Size(158, 29);
+            this.toolStripExportToExcel.Text = "Export To Excel";
+            this.toolStripExportToExcel.Click += new System.EventHandler(this.toolStripExportToExcel_Click);
+            // 
             // BtnExit
             // 
             this.BtnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -309,17 +357,6 @@
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
-            // BtnLoadAll
-            // 
-            this.BtnLoadAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLoadAll.Location = new System.Drawing.Point(473, 77);
-            this.BtnLoadAll.Name = "BtnLoadAll";
-            this.BtnLoadAll.Size = new System.Drawing.Size(100, 34);
-            this.BtnLoadAll.TabIndex = 3;
-            this.BtnLoadAll.Text = "&Load All";
-            this.BtnLoadAll.UseVisualStyleBackColor = true;
-            this.BtnLoadAll.Click += new System.EventHandler(this.BtnLoadAll_Click);
-            // 
             // BtnSearch
             // 
             this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,32 +367,6 @@
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(216, 79);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(196, 29);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dataGridView);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1538, 708);
-            this.panel2.TabIndex = 4;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
             // 
             // MainWindow
             // 
@@ -411,6 +422,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripButton toolStripAdminButton;
         private System.Windows.Forms.ToolStripButton createJobToolStripButton;
+        private System.Windows.Forms.ToolStripButton toolStripExportToExcel;
     }
 }
 
