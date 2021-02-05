@@ -24,6 +24,22 @@ namespace PrepandPaint.Models
                 return prepAndPaintList.OrderBy(x => x.JobNumber).ToList();
             }
         }
+        public static List<PrepAndPaintModel> GetDataByYear(int selectedYear)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                List<PrepAndPaintModel> prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
+                List<PrepAndPaintModel> listToReturn = new List<PrepAndPaintModel>();
+                foreach (var items in prepAndPaintList)
+                {
+                    if (items.PaintDate.Contains(selectedYear.ToString()))
+                    {
+                        listToReturn.Add(items);
+                    }
+                }
+                return listToReturn.OrderBy(x => x.JobNumber).ToList();
+            }
+        }
         public static void BackUpDataBase(string destinationPath)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
@@ -63,7 +79,7 @@ namespace PrepandPaint.Models
             }
         }
 
-        public static List<PrepAndPaintModel> SearchJobNumber(string jobNumber)
+        public static List<PrepAndPaintModel> SearchJobsByAnyYear(string jobNumber)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
@@ -72,12 +88,46 @@ namespace PrepandPaint.Models
             }
         }
 
-        public static List<PrepAndPaintModel> SearchItem(string item)
+        public static List<PrepAndPaintModel> SearchItemAnyYear(string item)
         {
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 List<PrepAndPaintModel> searchItem = connection.Table<PrepAndPaintModel>().ToList();
                 return searchItem.Where(x => x.BodyOrDoors.Equals(item, StringComparison.OrdinalIgnoreCase)).OrderByDescending(d => d.PaintDate).ToList();
+            }
+        }
+
+        public static List<PrepAndPaintModel> SearchJobNumber(string jobNumber, int selectedYear)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                List<PrepAndPaintModel> search = connection.Table<PrepAndPaintModel>().ToList();
+                List<PrepAndPaintModel> listToReturn = new List<PrepAndPaintModel>();
+                foreach (var items in search)
+                {
+                    if (items.PaintDate.Contains(selectedYear.ToString()))
+                    {
+                        listToReturn.Add(items);
+                    }
+                }
+                return listToReturn.Where(x => x.JobNumber.Contains(jobNumber)).OrderByDescending(d => d.StartDate).ToList();
+            }
+        }
+
+        public static List<PrepAndPaintModel> SearchItem(string item, int selectedYear)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
+            {
+                List<PrepAndPaintModel> searchItem = connection.Table<PrepAndPaintModel>().ToList();
+                List<PrepAndPaintModel> listToReturn = new List<PrepAndPaintModel>();
+                foreach (var items in searchItem)
+                {
+                    if (items.PaintDate.Contains(selectedYear.ToString()))
+                    {
+                        listToReturn.Add(items);
+                    }
+                }
+                return listToReturn.Where(x => x.BodyOrDoors.Equals(item, StringComparison.OrdinalIgnoreCase)).OrderByDescending(d => d.PaintDate).ToList();
             }
         }
 
@@ -87,7 +137,7 @@ namespace PrepandPaint.Models
             {
                 List<PrepAndPaintModel> prepAndPaintList = new List<PrepAndPaintModel>();
                 prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
-                return prepAndPaintList.OrderBy(x => x.PaintDate).ToList();
+                return prepAndPaintList.OrderByDescending(x => x.PaintDate.Contains("2021")).ToList();
             }
         }
 

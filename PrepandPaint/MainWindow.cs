@@ -237,7 +237,7 @@ namespace PrepandPaint
             }
             else if (rdoItem.Checked)
             {
-                dataGridView.DataSource = PrepAndPaintDB.SearchItem(txtSearch.Text);
+                dataGridView.DataSource = PrepAndPaintDB.SearchItem(txtSearch.Text, yearSelection.Value.Year);
                 if (dataGridView.Rows.Count <= 0)
                 {
                     MessageBox.Show($"Nothing found with name {txtSearch.Text}", "Nothing found!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -250,7 +250,7 @@ namespace PrepandPaint
             }
             else if (rdoJobNumber.Checked)
             {
-               dataGridView.DataSource = PrepAndPaintDB.SearchJobNumber(txtSearch.Text);
+               dataGridView.DataSource = PrepAndPaintDB.SearchJobNumber(txtSearch.Text, yearSelection.Value.Year);
                 if (dataGridView.Rows.Count <= 0)
                 {
                     MessageBox.Show($"Nothing found for Job# {txtSearch.Text}", "Nothing found!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -260,9 +260,46 @@ namespace PrepandPaint
                     SetDataGridView();
                 }
             }
-            
         }
 
+        private void btnSearchAnyYear_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                MessageBox.Show("Enter an item to search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (rdoItem.Checked)
+            {
+                dataGridView.DataSource = PrepAndPaintDB.SearchItemAnyYear(txtSearch.Text);
+                if (dataGridView.Rows.Count <= 0)
+                {
+                    MessageBox.Show($"Nothing found with name {txtSearch.Text}", "Nothing found!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    SetDataGridView();
+                }
+
+            }
+            else if (rdoJobNumber.Checked)
+            {
+                dataGridView.DataSource = PrepAndPaintDB.SearchJobsByAnyYear(txtSearch.Text);
+                if (dataGridView.Rows.Count <= 0)
+                {
+                    MessageBox.Show($"Nothing found for Job# {txtSearch.Text}", "Nothing found!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    SetDataGridView();
+                }
+            }
+        }
+        private void btnLoadByYear_Click(object sender, EventArgs e)
+        {
+            prepAndPaintModels = PrepAndPaintDB.GetDataByYear(yearSelection.Value.Year);
+            dataGridView.DataSource = prepAndPaintModels;
+            SetDataGridView();
+        }
         private void BtnLoadAll_Click(object sender, EventArgs e)
         {
             txtSearch.Clear();
@@ -418,5 +455,7 @@ namespace PrepandPaint
                 }
             }
         }
+
+        
     }
 }

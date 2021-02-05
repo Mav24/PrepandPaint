@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -42,26 +42,28 @@
             this.rdoJobNumber = new System.Windows.Forms.RadioButton();
             this.rdoItem = new System.Windows.Forms.RadioButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.createJobToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.BtnBackUpDataBase = new System.Windows.Forms.ToolStripButton();
+            this.BtnRestoreDataBase = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripAdminButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripExportToExcel = new System.Windows.Forms.ToolStripButton();
+            this.BtnExit = new System.Windows.Forms.Button();
             this.BtnLoadAll = new System.Windows.Forms.Button();
+            this.BtnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.createJobToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.pasteToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.BtnBackUpDataBase = new System.Windows.Forms.ToolStripButton();
-            this.BtnRestoreDataBase = new System.Windows.Forms.ToolStripButton();
-            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.sortToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripAdminButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripExportToExcel = new System.Windows.Forms.ToolStripButton();
-            this.BtnExit = new System.Windows.Forms.Button();
-            this.BtnSearch = new System.Windows.Forms.Button();
+            this.yearSelection = new System.Windows.Forms.DateTimePicker();
+            this.btnSearchAnyYear = new System.Windows.Forms.Button();
+            this.btnLoadByYear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -85,27 +87,27 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.GridColor = System.Drawing.Color.Blue;
@@ -113,16 +115,16 @@
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(1538, 708);
             this.dataGridView.TabIndex = 0;
@@ -130,9 +132,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSearchAnyYear);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Controls.Add(this.BtnExit);
+            this.panel1.Controls.Add(this.btnLoadByYear);
             this.panel1.Controls.Add(this.BtnLoadAll);
             this.panel1.Controls.Add(this.BtnSearch);
             this.panel1.Controls.Add(this.txtSearch);
@@ -146,11 +150,12 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rdoJobNumber);
+            this.groupBox1.Controls.Add(this.yearSelection);
             this.groupBox1.Controls.Add(this.rdoItem);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 50);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(198, 68);
+            this.groupBox1.Size = new System.Drawing.Size(244, 68);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search By:";
@@ -160,7 +165,7 @@
             this.rdoJobNumber.AutoSize = true;
             this.rdoJobNumber.Checked = true;
             this.rdoJobNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoJobNumber.Location = new System.Drawing.Point(6, 30);
+            this.rdoJobNumber.Location = new System.Drawing.Point(95, 30);
             this.rdoJobNumber.Name = "rdoJobNumber";
             this.rdoJobNumber.Size = new System.Drawing.Size(69, 28);
             this.rdoJobNumber.TabIndex = 0;
@@ -173,7 +178,7 @@
             // 
             this.rdoItem.AutoSize = true;
             this.rdoItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoItem.Location = new System.Drawing.Point(81, 30);
+            this.rdoItem.Location = new System.Drawing.Point(170, 30);
             this.rdoItem.Name = "rdoItem";
             this.rdoItem.Size = new System.Drawing.Size(63, 28);
             this.rdoItem.TabIndex = 0;
@@ -194,7 +199,6 @@
             this.BtnRestoreDataBase,
             this.toolStripSeparator1,
             this.helpToolStripButton,
-            this.sortToolStripButton,
             this.toolStripAdminButton,
             this.toolStripExportToExcel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -203,53 +207,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1538, 32);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripSeparator
-            // 
-            this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 32);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
-            // 
-            // BtnLoadAll
-            // 
-            this.BtnLoadAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLoadAll.Location = new System.Drawing.Point(473, 77);
-            this.BtnLoadAll.Name = "BtnLoadAll";
-            this.BtnLoadAll.Size = new System.Drawing.Size(100, 34);
-            this.BtnLoadAll.TabIndex = 3;
-            this.BtnLoadAll.Text = "&Load All";
-            this.BtnLoadAll.UseVisualStyleBackColor = true;
-            this.BtnLoadAll.Click += new System.EventHandler(this.BtnLoadAll_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(216, 79);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(196, 29);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dataGridView);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1538, 708);
-            this.panel2.TabIndex = 4;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
             // 
             // createJobToolStripButton
             // 
@@ -287,6 +244,11 @@
             this.toolStripButton1.Text = "Notes";
             this.toolStripButton1.Click += new System.EventHandler(this.BtnSupervisorNotes_Click);
             // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 32);
+            // 
             // BtnBackUpDataBase
             // 
             this.BtnBackUpDataBase.Image = global::PrepandPaint.Properties.Resources.Archive_16x16;
@@ -305,6 +267,11 @@
             this.BtnRestoreDataBase.Text = "&Restore Database";
             this.BtnRestoreDataBase.Click += new System.EventHandler(this.BtnRestoreDataBase_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
+            // 
             // helpToolStripButton
             // 
             this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
@@ -313,15 +280,6 @@
             this.helpToolStripButton.Size = new System.Drawing.Size(71, 29);
             this.helpToolStripButton.Text = "He&lp";
             this.helpToolStripButton.Click += new System.EventHandler(this.helpToolStripButton_Click);
-            // 
-            // sortToolStripButton
-            // 
-            this.sortToolStripButton.Image = global::PrepandPaint.Properties.Resources.Preview_16x16;
-            this.sortToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sortToolStripButton.Name = "sortToolStripButton";
-            this.sortToolStripButton.Size = new System.Drawing.Size(182, 29);
-            this.sortToolStripButton.Text = "Sort By Paint Date";
-            this.sortToolStripButton.Click += new System.EventHandler(this.sortToolStripButton_Click);
             // 
             // toolStripAdminButton
             // 
@@ -357,16 +315,85 @@
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
+            // BtnLoadAll
+            // 
+            this.BtnLoadAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLoadAll.Location = new System.Drawing.Point(861, 77);
+            this.BtnLoadAll.Name = "BtnLoadAll";
+            this.BtnLoadAll.Size = new System.Drawing.Size(100, 34);
+            this.BtnLoadAll.TabIndex = 3;
+            this.BtnLoadAll.Text = "&Load All";
+            this.BtnLoadAll.UseVisualStyleBackColor = true;
+            this.BtnLoadAll.Click += new System.EventHandler(this.BtnLoadAll_Click);
+            // 
             // BtnSearch
             // 
             this.BtnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSearch.Image = global::PrepandPaint.Properties.Resources.Search_24x24;
-            this.BtnSearch.Location = new System.Drawing.Point(418, 77);
+            this.BtnSearch.Location = new System.Drawing.Point(464, 77);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.Size = new System.Drawing.Size(49, 34);
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.UseVisualStyleBackColor = true;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(262, 79);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(196, 29);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 124);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1538, 708);
+            this.panel2.TabIndex = 4;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            // 
+            // yearSelection
+            // 
+            this.yearSelection.CustomFormat = "yyyy";
+            this.yearSelection.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.yearSelection.Location = new System.Drawing.Point(6, 30);
+            this.yearSelection.Name = "yearSelection";
+            this.yearSelection.ShowUpDown = true;
+            this.yearSelection.Size = new System.Drawing.Size(83, 29);
+            this.yearSelection.TabIndex = 7;
+            // 
+            // btnSearchAnyYear
+            // 
+            this.btnSearchAnyYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.btnSearchAnyYear.Location = new System.Drawing.Point(519, 77);
+            this.btnSearchAnyYear.Name = "btnSearchAnyYear";
+            this.btnSearchAnyYear.Size = new System.Drawing.Size(178, 34);
+            this.btnSearchAnyYear.TabIndex = 8;
+            this.btnSearchAnyYear.Text = "Search Any Year";
+            this.btnSearchAnyYear.UseVisualStyleBackColor = true;
+            this.btnSearchAnyYear.Click += new System.EventHandler(this.btnSearchAnyYear_Click);
+            // 
+            // btnLoadByYear
+            // 
+            this.btnLoadByYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadByYear.Location = new System.Drawing.Point(706, 77);
+            this.btnLoadByYear.Name = "btnLoadByYear";
+            this.btnLoadByYear.Size = new System.Drawing.Size(149, 34);
+            this.btnLoadByYear.TabIndex = 3;
+            this.btnLoadByYear.Text = "Load &By Year";
+            this.btnLoadByYear.UseVisualStyleBackColor = true;
+            this.btnLoadByYear.Click += new System.EventHandler(this.btnLoadByYear_Click);
             // 
             // MainWindow
             // 
@@ -418,11 +445,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdoJobNumber;
         private System.Windows.Forms.RadioButton rdoItem;
-        private System.Windows.Forms.ToolStripButton sortToolStripButton;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripButton toolStripAdminButton;
         private System.Windows.Forms.ToolStripButton createJobToolStripButton;
         private System.Windows.Forms.ToolStripButton toolStripExportToExcel;
+        private System.Windows.Forms.DateTimePicker yearSelection;
+        private System.Windows.Forms.Button btnSearchAnyYear;
+        private System.Windows.Forms.Button btnLoadByYear;
     }
 }
 
