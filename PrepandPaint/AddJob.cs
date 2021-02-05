@@ -43,33 +43,40 @@ namespace PrepandPaint
 
         private void FillTextBoxes()
         {
-            txtJobNumber.Text = editJob.JobNumber;
-            if (editJob.StartDate == "")
+            try
             {
-                dateTimePickerStartDate.Value = DateTime.Now;
-                dateTimePickerStartDate.Checked = false;
+                txtJobNumber.Text = editJob.JobNumber;
+                if (editJob.StartDate == "")
+                {
+                    dateTimePickerStartDate.Value = DateTime.Now;
+                    dateTimePickerStartDate.Checked = false;
+                }
+                else
+                {
+                    dateTimePickerStartDate.Value = DateTime.Parse(editJob.StartDate);
+                }
+                txtPrepper.Text = editJob.Prepper;
+                if (editJob.PaintDate == "")
+                {
+                    dateTimePickerPaintDate.Value = DateTime.Now;
+                    dateTimePickerPaintDate.Checked = false;
+                }
+                else
+                {
+                    dateTimePickerPaintDate.Value = DateTime.Parse(editJob.PaintDate);
+                }
+                txtPainter.Text = editJob.Painter;
+                cmboBodyDoors.Text = editJob.BodyOrDoors;
+                cmboBooth.SelectedItem = editJob.Booth;
+                cmboColour.Text = editJob.Colour;
+                checkNewProcess.Checked = editJob.NewProcess;
+                checkWashBay.Checked = editJob.WashBay;
+                txtComments.Text = editJob.Comments;
             }
-            else
+            catch (Exception ex)
             {
-                dateTimePickerStartDate.Value = DateTime.Parse(editJob.StartDate);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            txtPrepper.Text = editJob.Prepper;
-            if (editJob.PaintDate == "")
-            {
-                dateTimePickerPaintDate.Value = DateTime.Now;
-                dateTimePickerPaintDate.Checked = false;
-            }
-            else
-            {
-                dateTimePickerPaintDate.Value = DateTime.Parse(editJob.PaintDate);
-            }
-            txtPainter.Text = editJob.Painter;
-            cmboBodyDoors.Text = editJob.BodyOrDoors;
-            cmboBooth.SelectedItem = editJob.Booth;
-            cmboColour.Text = editJob.Colour;
-            checkNewProcess.Checked = editJob.NewProcess;
-            checkWashBay.Checked = editJob.WashBay;
-            txtComments.Text = editJob.Comments;
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
