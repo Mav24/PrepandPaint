@@ -35,7 +35,7 @@ namespace PrepandPaint
             dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
             dataGridView.Columns[0].Visible = false;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridView.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns[1].HeaderText = "Job#";
