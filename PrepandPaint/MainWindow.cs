@@ -233,7 +233,7 @@ namespace PrepandPaint
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                MessageBox.Show("Enter a job number to search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Enter something in the search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (rdoItem.Checked)
             {
@@ -266,7 +266,7 @@ namespace PrepandPaint
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                MessageBox.Show("Enter an item to search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Enter somethingin the search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (rdoItem.Checked)
             {
@@ -298,6 +298,7 @@ namespace PrepandPaint
         {
             prepAndPaintModels = PrepAndPaintDB.GetDataByYear(yearSelection.Value.Year);
             dataGridView.DataSource = prepAndPaintModels;
+            txtSearch.Clear();
             SetDataGridView();
         }
         private void BtnLoadAll_Click(object sender, EventArgs e)
