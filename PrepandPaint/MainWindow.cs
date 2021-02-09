@@ -229,11 +229,11 @@ namespace PrepandPaint
             }
         }
 
-        private void BtnSearch_Click(object sender, EventArgs e)
+        private void btnSearchBySelectedYear_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                MessageBox.Show("Enter something in the search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Enter something in the search and select a year to search!", "Noting To Search!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else if (rdoItem.Checked)
             {
@@ -246,11 +246,11 @@ namespace PrepandPaint
                 {
                     SetDataGridView();
                 }
-                
+
             }
             else if (rdoJobNumber.Checked)
             {
-               dataGridView.DataSource = PrepAndPaintDB.SearchJobNumber(txtSearch.Text, yearSelection.Value.Year);
+                dataGridView.DataSource = PrepAndPaintDB.SearchJobNumber(txtSearch.Text, yearSelection.Value.Year);
                 if (dataGridView.Rows.Count <= 0)
                 {
                     MessageBox.Show($"Nothing found for Job# {txtSearch.Text}", "Nothing found!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -294,13 +294,16 @@ namespace PrepandPaint
                 }
             }
         }
-        private void btnLoadByYear_Click(object sender, EventArgs e)
-        {
-            prepAndPaintModels = PrepAndPaintDB.GetDataByYear(yearSelection.Value.Year);
-            dataGridView.DataSource = prepAndPaintModels;
-            txtSearch.Clear();
-            SetDataGridView();
-        }
+
+        /* This is an option I'm not using right now */
+
+        //private void btnLoadByYear_Click(object sender, EventArgs e)
+        //{
+        //    prepAndPaintModels = PrepAndPaintDB.GetDataByYear(yearSelection.Value.Year);
+        //    dataGridView.DataSource = prepAndPaintModels;
+        //    txtSearch.Clear();
+        //    SetDataGridView();
+        //}
         private void BtnLoadAll_Click(object sender, EventArgs e)
         {
             txtSearch.Clear();
@@ -457,6 +460,9 @@ namespace PrepandPaint
             }
         }
 
-        
+        private void yearSelection_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
