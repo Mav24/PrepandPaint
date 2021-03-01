@@ -21,7 +21,7 @@ namespace PrepandPaint.Models
                 connection.CreateTable<PrepAndPaintModel>();
                 List<PrepAndPaintModel> prepAndPaintList = new List<PrepAndPaintModel>();
                 prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
-                return prepAndPaintList.OrderBy(x => x.JobNumber).ToList();
+                return prepAndPaintList.OrderByDescending(x => x.Id).ToList();
             }
         }
         public static List<PrepAndPaintModel> GetDataByYear(int selectedYear)
@@ -84,7 +84,7 @@ namespace PrepandPaint.Models
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 List<PrepAndPaintModel> search = connection.Table<PrepAndPaintModel>().ToList();
-                return search.Where(x => x.JobNumber.Contains(jobNumber)).OrderByDescending(d => d.StartDate).ToList();
+                return search.Where(x => x.JobNumber.Contains(jobNumber)).ToList();
             }
         }
 
@@ -93,7 +93,7 @@ namespace PrepandPaint.Models
             using (SQLiteConnection connection = new SQLiteConnection(DataBase.mainDatabaseFile))
             {
                 List<PrepAndPaintModel> searchItem = connection.Table<PrepAndPaintModel>().ToList();
-                return searchItem.Where(x => x.BodyOrDoors.Equals(item, StringComparison.OrdinalIgnoreCase)).OrderByDescending(d => d.PaintDate).ToList();
+                return searchItem.Where(x => x.BodyOrDoors.Equals(item, StringComparison.OrdinalIgnoreCase)).OrderBy(d => d.PaintDate).ToList();
             }
         }
 
