@@ -40,6 +40,7 @@ namespace PrepandPaint
             this.BtnAddColour = new System.Windows.Forms.Button();
             this.checkNewProcess = new System.Windows.Forms.CheckBox();
             this.checkBoxWashBay = new System.Windows.Forms.CheckBox();
+            this.AddItem = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -150,6 +151,16 @@ namespace PrepandPaint
             this.checkBoxWashBay.Text = "&Wash Bay";
             this.checkBoxWashBay.UseVisualStyleBackColor = true;
             // 
+            // AddItem
+            // 
+            this.AddItem.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
+            this.AddItem.Location = new System.Drawing.Point(342, 136);
+            this.AddItem.Name = "AddItem";
+            this.AddItem.Size = new System.Drawing.Size(34, 28);
+            this.AddItem.TabIndex = 7;
+            this.AddItem.UseVisualStyleBackColor = true;
+            this.AddItem.Click += new System.EventHandler(this.AddItem_Click);
+            // 
             // CreateJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -157,6 +168,7 @@ namespace PrepandPaint
             this.ClientSize = new System.Drawing.Size(399, 432);
             this.Controls.Add(this.checkBoxWashBay);
             this.Controls.Add(this.checkNewProcess);
+            this.Controls.Add(this.AddItem);
             this.Controls.Add(this.BtnAddColour);
             this.Controls.Add(this.itemsListBox);
             this.Controls.Add(this.btnCancel);
@@ -191,5 +203,6 @@ namespace PrepandPaint
         private System.Windows.Forms.Button BtnAddColour;
         private System.Windows.Forms.CheckBox checkNewProcess;
         private System.Windows.Forms.CheckBox checkBoxWashBay;
+        private System.Windows.Forms.Button AddItem;
     }
 }

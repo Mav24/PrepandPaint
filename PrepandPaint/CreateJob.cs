@@ -114,5 +114,21 @@ namespace PrepandPaint
                 cmboColour.SelectedIndex = -1;
             }
         }
+
+        private void AddItem_Click(object sender, EventArgs e)
+        {
+            AddItem addNewItem = new AddItem();
+            DialogResult result = addNewItem.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                GetItemInfo();
+                itemsListBox.SelectedItem = addNewItem.itemName;
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                GetItemInfo();
+            }
+          
+        }
     }
 }

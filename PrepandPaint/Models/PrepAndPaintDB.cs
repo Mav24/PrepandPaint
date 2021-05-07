@@ -21,7 +21,7 @@ namespace PrepandPaint.Models
                 connection.CreateTable<PrepAndPaintModel>();
                 List<PrepAndPaintModel> prepAndPaintList = new List<PrepAndPaintModel>();
                 prepAndPaintList = connection.Table<PrepAndPaintModel>().ToList();
-                return prepAndPaintList.OrderByDescending(x => x.Id).ToList();
+                return prepAndPaintList.OrderByDescending(x => x.JobNumber).ToList();
             }
         }
         public static List<PrepAndPaintModel> GetDataByYear(int selectedYear)
