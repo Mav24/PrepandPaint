@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Location = new System.Drawing.Point(14, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 25);
             this.label1.TabIndex = 0;
@@ -48,16 +48,17 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(92, 48);
+            this.txtNotes.Location = new System.Drawing.Point(107, 55);
+            this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
-            this.txtNotes.Size = new System.Drawing.Size(656, 20);
+            this.txtNotes.Size = new System.Drawing.Size(315, 154);
             this.txtNotes.TabIndex = 1;
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(673, 88);
+            this.BtnCancel.Location = new System.Drawing.Point(367, 228);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancel.Size = new System.Drawing.Size(55, 25);
             this.BtnCancel.TabIndex = 3;
             this.BtnCancel.Text = "&Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
@@ -65,9 +66,9 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(592, 88);
+            this.BtnSave.Location = new System.Drawing.Point(306, 228);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(75, 23);
+            this.BtnSave.Size = new System.Drawing.Size(55, 25);
             this.BtnSave.TabIndex = 2;
             this.BtnSave.Text = "&Save";
             this.BtnSave.UseVisualStyleBackColor = true;
@@ -75,16 +76,16 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(92, 13);
+            this.dateTimePicker1.Location = new System.Drawing.Point(107, 15);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(227, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(264, 21);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 43);
+            this.label2.Location = new System.Drawing.Point(14, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 25);
             this.label2.TabIndex = 0;
@@ -92,15 +93,16 @@
             // 
             // AddNotes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 123);
+            this.ClientSize = new System.Drawing.Size(448, 296);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "AddNotes";
             this.ShowIcon = false;

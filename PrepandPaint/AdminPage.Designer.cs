@@ -43,9 +43,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 138);
+            this.label1.Location = new System.Drawing.Point(11, 83);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 25);
+            this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "A&dmins:";
             // 
@@ -54,52 +55,58 @@
             this.adminDataGridView.AllowUserToAddRows = false;
             this.adminDataGridView.AllowUserToDeleteRows = false;
             this.adminDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.adminDataGridView.Location = new System.Drawing.Point(102, 138);
+            this.adminDataGridView.Location = new System.Drawing.Point(65, 83);
+            this.adminDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.adminDataGridView.Name = "adminDataGridView";
             this.adminDataGridView.ReadOnly = true;
             this.adminDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.adminDataGridView.Size = new System.Drawing.Size(389, 204);
+            this.adminDataGridView.Size = new System.Drawing.Size(295, 122);
             this.adminDataGridView.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 28);
+            this.label2.Location = new System.Drawing.Point(11, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 25);
+            this.label2.Size = new System.Drawing.Size(81, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Admin &Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 70);
+            this.label3.Location = new System.Drawing.Point(11, 42);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 25);
+            this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "&PassWord:";
             // 
             // txtAdminName
             // 
-            this.txtAdminName.Location = new System.Drawing.Point(149, 25);
+            this.txtAdminName.Location = new System.Drawing.Point(95, 15);
+            this.txtAdminName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAdminName.Name = "txtAdminName";
-            this.txtAdminName.Size = new System.Drawing.Size(226, 33);
+            this.txtAdminName.Size = new System.Drawing.Size(145, 23);
             this.txtAdminName.TabIndex = 1;
             this.txtAdminName.Tag = "Admin Name";
             // 
             // txtAdminPassWord
             // 
-            this.txtAdminPassWord.Location = new System.Drawing.Point(149, 67);
+            this.txtAdminPassWord.Location = new System.Drawing.Point(95, 40);
+            this.txtAdminPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAdminPassWord.Name = "txtAdminPassWord";
-            this.txtAdminPassWord.Size = new System.Drawing.Size(226, 33);
+            this.txtAdminPassWord.Size = new System.Drawing.Size(145, 23);
             this.txtAdminPassWord.TabIndex = 3;
             this.txtAdminPassWord.Tag = "PassWord";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(404, 67);
+            this.btnAdd.Location = new System.Drawing.Point(257, 40);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 33);
+            this.btnAdd.Size = new System.Drawing.Size(55, 25);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -107,9 +114,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(311, 348);
+            this.btnDelete.Location = new System.Drawing.Point(246, 226);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(87, 33);
+            this.btnDelete.Size = new System.Drawing.Size(55, 25);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -117,9 +125,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(404, 348);
+            this.btnClose.Location = new System.Drawing.Point(305, 226);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(87, 33);
+            this.btnClose.Size = new System.Drawing.Size(55, 25);
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -127,9 +136,9 @@
             // 
             // AdminPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 411);
+            this.ClientSize = new System.Drawing.Size(401, 262);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
@@ -139,8 +148,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.adminDataGridView);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdminPage";
