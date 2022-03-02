@@ -76,7 +76,7 @@ namespace PrepandPaint
             // txtJobNumber
             // 
             this.txtJobNumber.Location = new System.Drawing.Point(54, 22);
-            this.txtJobNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtJobNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtJobNumber.Name = "txtJobNumber";
             this.txtJobNumber.Size = new System.Drawing.Size(208, 21);
             this.txtJobNumber.TabIndex = 1;
@@ -87,16 +87,16 @@ namespace PrepandPaint
             this.cmboColour.IntegralHeight = false;
             this.cmboColour.ItemHeight = 15;
             this.cmboColour.Location = new System.Drawing.Point(60, 234);
-            this.cmboColour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmboColour.Margin = new System.Windows.Forms.Padding(2);
             this.cmboColour.MaxDropDownItems = 10;
             this.cmboColour.Name = "cmboColour";
-            this.cmboColour.Size = new System.Drawing.Size(202, 23);
+            this.cmboColour.Size = new System.Drawing.Size(345, 23);
             this.cmboColour.TabIndex = 6;
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(227, 270);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreate.Location = new System.Drawing.Point(370, 280);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(65, 25);
             this.btnCreate.TabIndex = 9;
@@ -106,8 +106,8 @@ namespace PrepandPaint
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(158, 270);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Location = new System.Drawing.Point(301, 280);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(65, 25);
             this.btnCancel.TabIndex = 8;
@@ -120,18 +120,18 @@ namespace PrepandPaint
             this.itemsListBox.FormattingEnabled = true;
             this.itemsListBox.ItemHeight = 15;
             this.itemsListBox.Location = new System.Drawing.Point(54, 102);
-            this.itemsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itemsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.itemsListBox.Name = "itemsListBox";
             this.itemsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.itemsListBox.Size = new System.Drawing.Size(208, 109);
+            this.itemsListBox.Size = new System.Drawing.Size(351, 109);
             this.itemsListBox.TabIndex = 4;
             this.itemsListBox.Tag = "Item";
             // 
             // BtnAddColour
             // 
             this.BtnAddColour.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
-            this.BtnAddColour.Location = new System.Drawing.Point(266, 234);
-            this.BtnAddColour.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnAddColour.Location = new System.Drawing.Point(409, 236);
+            this.BtnAddColour.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAddColour.Name = "BtnAddColour";
             this.BtnAddColour.Size = new System.Drawing.Size(26, 21);
             this.BtnAddColour.TabIndex = 7;
@@ -143,7 +143,7 @@ namespace PrepandPaint
             this.checkNewProcess.AutoSize = true;
             this.checkNewProcess.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkNewProcess.Location = new System.Drawing.Point(54, 52);
-            this.checkNewProcess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkNewProcess.Margin = new System.Windows.Forms.Padding(2);
             this.checkNewProcess.Name = "checkNewProcess";
             this.checkNewProcess.Size = new System.Drawing.Size(107, 20);
             this.checkNewProcess.TabIndex = 2;
@@ -155,7 +155,7 @@ namespace PrepandPaint
             this.checkBoxWashBay.AutoSize = true;
             this.checkBoxWashBay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxWashBay.Location = new System.Drawing.Point(162, 52);
-            this.checkBoxWashBay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxWashBay.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxWashBay.Name = "checkBoxWashBay";
             this.checkBoxWashBay.Size = new System.Drawing.Size(89, 20);
             this.checkBoxWashBay.TabIndex = 2;
@@ -165,8 +165,8 @@ namespace PrepandPaint
             // AddItem
             // 
             this.AddItem.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
-            this.AddItem.Location = new System.Drawing.Point(266, 102);
-            this.AddItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddItem.Location = new System.Drawing.Point(409, 102);
+            this.AddItem.Margin = new System.Windows.Forms.Padding(2);
             this.AddItem.Name = "AddItem";
             this.AddItem.Size = new System.Drawing.Size(26, 21);
             this.AddItem.TabIndex = 7;
@@ -177,7 +177,7 @@ namespace PrepandPaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 316);
+            this.ClientSize = new System.Drawing.Size(462, 316);
             this.Controls.Add(this.checkBoxWashBay);
             this.Controls.Add(this.checkNewProcess);
             this.Controls.Add(this.AddItem);

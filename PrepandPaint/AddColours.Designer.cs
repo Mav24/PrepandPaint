@@ -55,11 +55,11 @@
             this.colourDataGridView.AllowUserToAddRows = false;
             this.colourDataGridView.AllowUserToDeleteRows = false;
             this.colourDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.colourDataGridView.Location = new System.Drawing.Point(104, 138);
+            this.colourDataGridView.Location = new System.Drawing.Point(15, 138);
             this.colourDataGridView.Name = "colourDataGridView";
             this.colourDataGridView.ReadOnly = true;
             this.colourDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.colourDataGridView.Size = new System.Drawing.Size(321, 150);
+            this.colourDataGridView.Size = new System.Drawing.Size(468, 150);
             this.colourDataGridView.TabIndex = 6;
             // 
             // label1
@@ -90,7 +90,7 @@
             // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(269, 294);
+            this.BtnDelete.Location = new System.Drawing.Point(327, 312);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(75, 23);
             this.BtnDelete.TabIndex = 7;
@@ -100,7 +100,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(350, 294);
+            this.BtnCancel.Location = new System.Drawing.Point(408, 312);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 8;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 347);
+            this.ClientSize = new System.Drawing.Size(495, 347);
             this.Controls.Add(this.txtColour);
             this.Controls.Add(this.txtColourCode);
             this.Controls.Add(this.label2);

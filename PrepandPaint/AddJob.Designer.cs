@@ -80,7 +80,7 @@
             // 
             this.txtJobNumber.Location = new System.Drawing.Point(118, 24);
             this.txtJobNumber.Name = "txtJobNumber";
-            this.txtJobNumber.Size = new System.Drawing.Size(300, 21);
+            this.txtJobNumber.Size = new System.Drawing.Size(366, 21);
             this.txtJobNumber.TabIndex = 2;
             this.txtJobNumber.Tag = "Job#";
             // 
@@ -98,7 +98,7 @@
             // 
             this.txtPrepper.Location = new System.Drawing.Point(117, 132);
             this.txtPrepper.Name = "txtPrepper";
-            this.txtPrepper.Size = new System.Drawing.Size(301, 21);
+            this.txtPrepper.Size = new System.Drawing.Size(367, 21);
             this.txtPrepper.TabIndex = 7;
             // 
             // label4
@@ -125,7 +125,7 @@
             // 
             this.txtPainter.Location = new System.Drawing.Point(115, 219);
             this.txtPainter.Name = "txtPainter";
-            this.txtPainter.Size = new System.Drawing.Size(303, 21);
+            this.txtPainter.Size = new System.Drawing.Size(369, 21);
             this.txtPainter.TabIndex = 11;
             // 
             // cmboBodyDoors
@@ -137,7 +137,7 @@
             this.cmboBodyDoors.Location = new System.Drawing.Point(116, 305);
             this.cmboBodyDoors.MaxDropDownItems = 10;
             this.cmboBodyDoors.Name = "cmboBodyDoors";
-            this.cmboBodyDoors.Size = new System.Drawing.Size(303, 23);
+            this.cmboBodyDoors.Size = new System.Drawing.Size(369, 23);
             this.cmboBodyDoors.TabIndex = 15;
             this.cmboBodyDoors.Tag = "Item";
             // 
@@ -153,7 +153,7 @@
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(262, 526);
+            this.BtnSave.Location = new System.Drawing.Point(377, 526);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(75, 23);
             this.BtnSave.TabIndex = 22;
@@ -163,7 +163,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(344, 526);
+            this.BtnCancel.Location = new System.Drawing.Point(459, 526);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 23;
@@ -190,7 +190,7 @@
             "Old"});
             this.cmboBooth.Location = new System.Drawing.Point(115, 260);
             this.cmboBooth.Name = "cmboBooth";
-            this.cmboBooth.Size = new System.Drawing.Size(303, 23);
+            this.cmboBooth.Size = new System.Drawing.Size(369, 23);
             this.cmboBooth.TabIndex = 13;
             // 
             // label8
@@ -209,7 +209,7 @@
             this.txtComments.Multiline = true;
             this.txtComments.Name = "txtComments";
             this.txtComments.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtComments.Size = new System.Drawing.Size(303, 114);
+            this.txtComments.Size = new System.Drawing.Size(369, 114);
             this.txtComments.TabIndex = 21;
             // 
             // checkNewProcess
@@ -226,7 +226,7 @@
             // BtnAddItem
             // 
             this.BtnAddItem.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
-            this.BtnAddItem.Location = new System.Drawing.Point(424, 304);
+            this.BtnAddItem.Location = new System.Drawing.Point(496, 304);
             this.BtnAddItem.Name = "BtnAddItem";
             this.BtnAddItem.Size = new System.Drawing.Size(38, 23);
             this.BtnAddItem.TabIndex = 16;
@@ -252,14 +252,14 @@
             this.cmboColour.Location = new System.Drawing.Point(116, 350);
             this.cmboColour.MaxDropDownItems = 10;
             this.cmboColour.Name = "cmboColour";
-            this.cmboColour.Size = new System.Drawing.Size(302, 23);
+            this.cmboColour.Size = new System.Drawing.Size(368, 23);
             this.cmboColour.TabIndex = 18;
             this.cmboColour.Tag = "Colour";
             // 
             // BtnAddColour
             // 
             this.BtnAddColour.Image = global::PrepandPaint.Properties.Resources.Add_16x16;
-            this.BtnAddColour.Location = new System.Drawing.Point(424, 350);
+            this.BtnAddColour.Location = new System.Drawing.Point(496, 350);
             this.BtnAddColour.Name = "BtnAddColour";
             this.BtnAddColour.Size = new System.Drawing.Size(38, 23);
             this.BtnAddColour.TabIndex = 19;
@@ -273,7 +273,7 @@
             this.dateTimePickerStartDate.Location = new System.Drawing.Point(119, 66);
             this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
             this.dateTimePickerStartDate.ShowCheckBox = true;
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(299, 21);
+            this.dateTimePickerStartDate.Size = new System.Drawing.Size(365, 21);
             this.dateTimePickerStartDate.TabIndex = 24;
             // 
             // dateTimePickerPaintDate
@@ -282,7 +282,7 @@
             this.dateTimePickerPaintDate.Location = new System.Drawing.Point(118, 175);
             this.dateTimePickerPaintDate.Name = "dateTimePickerPaintDate";
             this.dateTimePickerPaintDate.ShowCheckBox = true;
-            this.dateTimePickerPaintDate.Size = new System.Drawing.Size(301, 21);
+            this.dateTimePickerPaintDate.Size = new System.Drawing.Size(367, 21);
             this.dateTimePickerPaintDate.TabIndex = 25;
             // 
             // checkWashBay
@@ -300,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 561);
+            this.ClientSize = new System.Drawing.Size(555, 561);
             this.Controls.Add(this.dateTimePickerPaintDate);
             this.Controls.Add(this.dateTimePickerStartDate);
             this.Controls.Add(this.label11);

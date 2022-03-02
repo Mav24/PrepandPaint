@@ -67,7 +67,7 @@
             // 
             // BtnDelete
             // 
-            this.BtnDelete.Location = new System.Drawing.Point(263, 223);
+            this.BtnDelete.Location = new System.Drawing.Point(414, 223);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(75, 23);
             this.BtnDelete.TabIndex = 5;
@@ -86,7 +86,7 @@
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(344, 223);
+            this.BtnCancel.Location = new System.Drawing.Point(495, 223);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 6;
@@ -103,14 +103,14 @@
             this.itemDataGridView.Name = "itemDataGridView";
             this.itemDataGridView.ReadOnly = true;
             this.itemDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.itemDataGridView.Size = new System.Drawing.Size(256, 150);
+            this.itemDataGridView.Size = new System.Drawing.Size(407, 150);
             this.itemDataGridView.TabIndex = 4;
             // 
             // AddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 258);
+            this.ClientSize = new System.Drawing.Size(582, 258);
             this.Controls.Add(this.itemDataGridView);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnDelete);

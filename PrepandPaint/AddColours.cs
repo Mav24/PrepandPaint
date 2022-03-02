@@ -24,7 +24,7 @@ namespace PrepandPaint
         {
             colourDataGridView.DataSource = PrepAndPaintDB.GetJobColours();
             colourDataGridView.Columns[0].Visible = false;
-            colourDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            colourDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void BtnAddColour_Click(object sender, EventArgs e)

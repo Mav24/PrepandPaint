@@ -18,7 +18,14 @@ namespace PrepandPaint
         public AddItem()
         {
             InitializeComponent();
+            SetDataGridView();
             PopulateListView();
+
+        }
+
+        private void SetDataGridView()
+        {
+            itemDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private void PopulateListView()
