@@ -36,7 +36,7 @@ namespace PrepandPaint
             //dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Bold);
             dataGridView.Columns[0].Visible = false;
             //dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            //dataGridView.Columns[11].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             //dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             //dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns[1].HeaderText = "Job#";
@@ -44,7 +44,7 @@ namespace PrepandPaint
             dataGridView.Columns[3].HeaderText = "Item";
             dataGridView.Columns[4].HeaderText = "Start Date";
             dataGridView.Columns[5].HeaderText = "Paint Date";
-            dataGridView.Columns[9].HeaderText = "New-Process";
+            dataGridView.Columns[10].HeaderText = "New-Process";
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -180,6 +180,7 @@ namespace PrepandPaint
             {
                 // This checks for null value in colour cell.
                 string colourValue;
+                string customerValue;
                 int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
                 if (dataGridView.Rows[selectedRowIndex].Cells[9].Value == null)
                 {
@@ -190,12 +191,21 @@ namespace PrepandPaint
                     colourValue = dataGridView.Rows[selectedRowIndex].Cells[9].Value.ToString();
                 }
 
+                if(dataGridView.Rows[selectedRowIndex].Cells[2].Value == null)
+                {
+                    customerValue = null;
+                }
+                else
+                {
+                    customerValue = dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString();
+                }
+
 
                 PrepAndPaintModel editJob = new PrepAndPaintModel()
                 {
                     Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value,
                     JobNumber = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString(),
-                    Customer = dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString(),
+                    Customer = customerValue,
                     BodyOrDoors = dataGridView.Rows[selectedRowIndex].Cells[3].Value.ToString(),
                     StartDate = dataGridView.Rows[selectedRowIndex].Cells[4].Value.ToString(),
                     Prepper = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
