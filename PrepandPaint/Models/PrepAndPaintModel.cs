@@ -14,6 +14,7 @@ namespace PrepandPaint.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string JobNumber { get; set; }
+        public string Customer { get; set; }
         public string BodyOrDoors { get; set; }
         public string StartDate { get; set; }
         public string Prepper { get; set; }

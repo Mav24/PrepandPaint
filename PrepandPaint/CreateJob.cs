@@ -29,6 +29,7 @@ namespace PrepandPaint
                     PrepAndPaintModel newJob = new PrepAndPaintModel()
                     {
                         JobNumber = txtJobNumber.Text,
+                        Customer = txtCustomer.Text,
                         StartDate = "",
                         Prepper = "",
                         PaintDate = "",
@@ -73,6 +74,7 @@ namespace PrepandPaint
 
         private void GetItemInfo()
         {
+            itemsListBox.Items.Clear();
             List<ItemsModel> list = PrepAndPaintDB.GetItemsList();
             foreach (var item in list)
             {

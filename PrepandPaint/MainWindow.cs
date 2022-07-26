@@ -40,8 +40,9 @@ namespace PrepandPaint
             //dataGridView.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             //dataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView.Columns[1].HeaderText = "Job#";
-            dataGridView.Columns[2].HeaderText = "Item";
-            dataGridView.Columns[3].HeaderText = "Start Date";
+            dataGridView.Columns[2].HeaderText = "Customer";
+            dataGridView.Columns[3].HeaderText = "Item";
+            dataGridView.Columns[4].HeaderText = "Start Date";
             dataGridView.Columns[5].HeaderText = "Paint Date";
             dataGridView.Columns[9].HeaderText = "New-Process";
         }
@@ -180,13 +181,13 @@ namespace PrepandPaint
                 // This checks for null value in colour cell.
                 string colourValue;
                 int selectedRowIndex = dataGridView.SelectedCells[0].RowIndex;
-                if (dataGridView.Rows[selectedRowIndex].Cells[8].Value == null)
+                if (dataGridView.Rows[selectedRowIndex].Cells[9].Value == null)
                 {
                     colourValue = null;
                 }
                 else
                 {
-                    colourValue = dataGridView.Rows[selectedRowIndex].Cells[8].Value.ToString();
+                    colourValue = dataGridView.Rows[selectedRowIndex].Cells[9].Value.ToString();
                 }
 
 
@@ -194,16 +195,17 @@ namespace PrepandPaint
                 {
                     Id = (int)dataGridView.Rows[selectedRowIndex].Cells[0].Value,
                     JobNumber = dataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString(),
-                    BodyOrDoors = dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString(),
-                    StartDate = dataGridView.Rows[selectedRowIndex].Cells[3].Value.ToString(),
-                    Prepper = dataGridView.Rows[selectedRowIndex].Cells[4].Value.ToString(),
-                    PaintDate = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
-                    Painter = dataGridView.Rows[selectedRowIndex].Cells[6].Value.ToString(),
-                    Booth = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
+                    Customer = dataGridView.Rows[selectedRowIndex].Cells[2].Value.ToString(),
+                    BodyOrDoors = dataGridView.Rows[selectedRowIndex].Cells[3].Value.ToString(),
+                    StartDate = dataGridView.Rows[selectedRowIndex].Cells[4].Value.ToString(),
+                    Prepper = dataGridView.Rows[selectedRowIndex].Cells[5].Value.ToString(),
+                    PaintDate = dataGridView.Rows[selectedRowIndex].Cells[6].Value.ToString(),
+                    Painter = dataGridView.Rows[selectedRowIndex].Cells[7].Value.ToString(),
+                    Booth = dataGridView.Rows[selectedRowIndex].Cells[8].Value.ToString(),
                     Colour = colourValue,
-                    NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[9].Value,
-                    WashBay = (bool)dataGridView.Rows[selectedRowIndex].Cells[10].Value,
-                    Comments = dataGridView.Rows[selectedRowIndex].Cells[11].Value.ToString(),
+                    NewProcess = (bool)dataGridView.Rows[selectedRowIndex].Cells[10].Value,
+                    WashBay = (bool)dataGridView.Rows[selectedRowIndex].Cells[11].Value,
+                    Comments = dataGridView.Rows[selectedRowIndex].Cells[12].Value.ToString(),
                 };
                 AddJob addJob = new AddJob();
                 addJob.editJob = editJob;

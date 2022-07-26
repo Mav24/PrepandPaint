@@ -46,6 +46,7 @@ namespace PrepandPaint
             try
             {
                 txtJobNumber.Text = editJob.JobNumber;
+                txtCustomer.Text = editJob.Customer;
                 if (editJob.StartDate == "")
                 {
                     dateTimePickerStartDate.Value = DateTime.Now;
@@ -92,6 +93,7 @@ namespace PrepandPaint
                         Id = editJob.Id,
                         StartDate = startDate,
                         JobNumber = txtJobNumber.Text,
+                        Customer = txtCustomer.Text,
                         Prepper = txtPrepper.Text,
                         PaintDate = paintDate,
                         Painter = txtPainter.Text,
@@ -114,6 +116,7 @@ namespace PrepandPaint
                     {
                         StartDate = startDate,
                         JobNumber = txtJobNumber.Text,
+                        Customer= txtCustomer.Text,
                         Prepper = txtPrepper.Text,
                         PaintDate = paintDate,
                         Painter = txtPainter.Text,
