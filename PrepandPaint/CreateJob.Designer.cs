@@ -62,7 +62,7 @@ namespace PrepandPaint
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 15);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 5;
             this.label2.Text = "&Items To Create:";
             // 
             // label3
@@ -72,7 +72,7 @@ namespace PrepandPaint
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 15);
-            this.label3.TabIndex = 5;
+            this.label3.TabIndex = 8;
             this.label3.Text = "Colour:";
             // 
             // txtJobNumber
@@ -93,7 +93,7 @@ namespace PrepandPaint
             this.cmboColour.MaxDropDownItems = 10;
             this.cmboColour.Name = "cmboColour";
             this.cmboColour.Size = new System.Drawing.Size(345, 23);
-            this.cmboColour.TabIndex = 6;
+            this.cmboColour.TabIndex = 9;
             // 
             // btnCreate
             // 
@@ -101,7 +101,7 @@ namespace PrepandPaint
             this.btnCreate.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(65, 25);
-            this.btnCreate.TabIndex = 9;
+            this.btnCreate.TabIndex = 12;
             this.btnCreate.Text = "C&reate";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -112,7 +112,7 @@ namespace PrepandPaint
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(65, 25);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -126,7 +126,7 @@ namespace PrepandPaint
             this.itemsListBox.Name = "itemsListBox";
             this.itemsListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.itemsListBox.Size = new System.Drawing.Size(351, 109);
-            this.itemsListBox.TabIndex = 4;
+            this.itemsListBox.TabIndex = 6;
             this.itemsListBox.Tag = "Item";
             // 
             // BtnAddColour
@@ -136,7 +136,7 @@ namespace PrepandPaint
             this.BtnAddColour.Margin = new System.Windows.Forms.Padding(2);
             this.BtnAddColour.Name = "BtnAddColour";
             this.BtnAddColour.Size = new System.Drawing.Size(26, 21);
-            this.BtnAddColour.TabIndex = 7;
+            this.BtnAddColour.TabIndex = 10;
             this.BtnAddColour.UseVisualStyleBackColor = true;
             this.BtnAddColour.Click += new System.EventHandler(this.BtnAddColour_Click);
             // 
@@ -148,7 +148,7 @@ namespace PrepandPaint
             this.checkNewProcess.Margin = new System.Windows.Forms.Padding(2);
             this.checkNewProcess.Name = "checkNewProcess";
             this.checkNewProcess.Size = new System.Drawing.Size(106, 20);
-            this.checkNewProcess.TabIndex = 2;
+            this.checkNewProcess.TabIndex = 3;
             this.checkNewProcess.Text = "&New Process";
             this.checkNewProcess.UseVisualStyleBackColor = true;
             // 
@@ -160,7 +160,7 @@ namespace PrepandPaint
             this.checkBoxWashBay.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxWashBay.Name = "checkBoxWashBay";
             this.checkBoxWashBay.Size = new System.Drawing.Size(88, 20);
-            this.checkBoxWashBay.TabIndex = 2;
+            this.checkBoxWashBay.TabIndex = 4;
             this.checkBoxWashBay.Text = "&Wash Bay";
             this.checkBoxWashBay.UseVisualStyleBackColor = true;
             // 
@@ -182,7 +182,7 @@ namespace PrepandPaint
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 15);
-            this.label4.TabIndex = 0;
+            this.label4.TabIndex = 2;
             this.label4.Text = "Customer:";
             // 
             // txtCustomer
@@ -191,7 +191,7 @@ namespace PrepandPaint
             this.txtCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(208, 21);
-            this.txtCustomer.TabIndex = 1;
+            this.txtCustomer.TabIndex = 2;
             // 
             // CreateJob
             // 
