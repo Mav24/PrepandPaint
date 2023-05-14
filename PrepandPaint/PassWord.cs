@@ -35,21 +35,21 @@ namespace PrepandPaint
             string login = txtLogin.Text;
             string password = txtPassWord.Text;
             List<AdminsModel> adminList = PrepAndPaintDB.GetAdmins();
+
             foreach (var name in adminList)
             {
                 if (login == name.Name && password == name.Password)
                 {
                     adminLogin = true;
                     this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show("Sorry login or password wrong! Please try again", "Incorrect PassWord!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txtPassWord.Clear();
-                    txtPassWord.Focus();
                     return;
                 }
             }
+
+            MessageBox.Show("Sorry login or password wrong! Please try again", "Incorrect PassWord!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            txtPassWord.Clear();
+            txtPassWord.Focus();
+            return;
 
 
         }

@@ -40,25 +40,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 67);
+            this.label1.Location = new System.Drawing.Point(28, 82);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 18);
+            this.label1.Size = new System.Drawing.Size(101, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "&PassWord:";
             // 
             // txtPassWord
             // 
-            this.txtPassWord.Location = new System.Drawing.Point(110, 67);
+            this.txtPassWord.Location = new System.Drawing.Point(147, 82);
+            this.txtPassWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.PasswordChar = '*';
-            this.txtPassWord.Size = new System.Drawing.Size(174, 20);
+            this.txtPassWord.Size = new System.Drawing.Size(231, 22);
             this.txtPassWord.TabIndex = 1;
             // 
             // BtnCancel
             // 
-            this.BtnCancel.Location = new System.Drawing.Point(128, 105);
+            this.BtnCancel.Location = new System.Drawing.Point(171, 129);
+            this.BtnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancel.Size = new System.Drawing.Size(100, 28);
             this.BtnCancel.TabIndex = 3;
             this.BtnCancel.Text = "&Cancel";
             this.BtnCancel.UseVisualStyleBackColor = true;
@@ -66,9 +69,10 @@
             // 
             // BtnOk
             // 
-            this.BtnOk.Location = new System.Drawing.Point(209, 105);
+            this.BtnOk.Location = new System.Drawing.Point(279, 129);
+            this.BtnOk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnOk.Name = "BtnOk";
-            this.BtnOk.Size = new System.Drawing.Size(75, 23);
+            this.BtnOk.Size = new System.Drawing.Size(100, 28);
             this.BtnOk.TabIndex = 2;
             this.BtnOk.Text = "&Ok";
             this.BtnOk.UseVisualStyleBackColor = true;
@@ -78,26 +82,27 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 34);
+            this.label2.Location = new System.Drawing.Point(28, 42);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 18);
+            this.label2.Size = new System.Drawing.Size(62, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "&Login:";
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(110, 34);
+            this.txtLogin.Location = new System.Drawing.Point(147, 42);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.PasswordChar = '*';
-            this.txtLogin.Size = new System.Drawing.Size(174, 20);
+            this.txtLogin.Size = new System.Drawing.Size(231, 22);
             this.txtLogin.TabIndex = 1;
             // 
             // PassWord
             // 
             this.AcceptButton = this.BtnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(311, 141);
+            this.ClientSize = new System.Drawing.Size(415, 174);
             this.Controls.Add(this.BtnOk);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.txtLogin);
@@ -105,6 +110,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PassWord";
