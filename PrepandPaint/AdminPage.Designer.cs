@@ -56,12 +56,13 @@
             this.adminDataGridView.AllowUserToDeleteRows = false;
             this.adminDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminDataGridView.Location = new System.Drawing.Point(65, 83);
-            this.adminDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.adminDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.adminDataGridView.Name = "adminDataGridView";
             this.adminDataGridView.ReadOnly = true;
             this.adminDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.adminDataGridView.Size = new System.Drawing.Size(295, 122);
             this.adminDataGridView.TabIndex = 6;
+            this.adminDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adminDataGridView_CellFormatting);
             // 
             // label2
             // 
@@ -86,7 +87,7 @@
             // txtAdminName
             // 
             this.txtAdminName.Location = new System.Drawing.Point(95, 15);
-            this.txtAdminName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAdminName.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdminName.Name = "txtAdminName";
             this.txtAdminName.Size = new System.Drawing.Size(145, 23);
             this.txtAdminName.TabIndex = 1;
@@ -95,7 +96,7 @@
             // txtAdminPassWord
             // 
             this.txtAdminPassWord.Location = new System.Drawing.Point(95, 40);
-            this.txtAdminPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAdminPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdminPassWord.Name = "txtAdminPassWord";
             this.txtAdminPassWord.Size = new System.Drawing.Size(145, 23);
             this.txtAdminPassWord.TabIndex = 3;
@@ -104,7 +105,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(257, 40);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(55, 25);
             this.btnAdd.TabIndex = 4;
@@ -115,7 +116,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(246, 226);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(55, 25);
             this.btnDelete.TabIndex = 7;
@@ -126,7 +127,7 @@
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(305, 226);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(55, 25);
             this.btnClose.TabIndex = 8;
@@ -149,7 +150,7 @@
             this.Controls.Add(this.adminDataGridView);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdminPage";

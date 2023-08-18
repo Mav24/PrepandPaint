@@ -394,6 +394,7 @@ namespace PrepandPaint
             if (result == DialogResult.OK)
             {
                 AdminPage adminPage = new AdminPage();
+                adminPage.adminId = passWord.adminId;
                 adminPage.ShowDialog();
             }
 

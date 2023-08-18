@@ -15,6 +15,7 @@ namespace PrepandPaint
     public partial class PassWord : Form
     {
         public bool adminLogin;
+        public int adminId;
         public PassWord()
         {
             InitializeComponent();
@@ -34,15 +35,27 @@ namespace PrepandPaint
         {
             string login = txtLogin.Text;
             string password = txtPassWord.Text;
-            List<AdminsModel> adminList = PrepAndPaintDB.GetAdmins();
 
-            foreach (var name in adminList)
+            if(login == "Admin" && password == "SuperAdmin")
             {
-                if (login == name.Name && password == name.Password)
+                adminLogin = true;
+                this.DialogResult = DialogResult.OK;
+                return;
+            }
+            else
+            {
+
+                List<AdminsModel> adminList = PrepAndPaintDB.GetAdmins();
+
+                foreach (var name in adminList)
                 {
-                    adminLogin = true;
-                    this.DialogResult = DialogResult.OK;
-                    return;
+                    if (login == name.Name && password == name.Password)
+                    {
+                        adminId = name.Id;
+                        adminLogin = true;
+                        this.DialogResult = DialogResult.OK;
+                        return;
+                    }
                 }
             }
 

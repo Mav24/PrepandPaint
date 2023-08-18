@@ -53,7 +53,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(17, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "&Item Name:";
             // 
@@ -80,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 16);
+            this.label2.Size = new System.Drawing.Size(139, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "&Select Item To Delete:";
             // 
@@ -90,7 +90,7 @@
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(75, 23);
             this.BtnCancel.TabIndex = 6;
-            this.BtnCancel.Text = "&Cancel";
+            this.BtnCancel.Text = "&Exit";
             this.BtnCancel.UseVisualStyleBackColor = true;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 

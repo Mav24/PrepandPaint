@@ -13,6 +13,7 @@ namespace PrepandPaint
 {
     public partial class AdminPage : Form
     {
+        public int adminId;
         public AdminPage()
         {
             InitializeComponent();
@@ -68,6 +69,11 @@ namespace PrepandPaint
                 string itemname = adminDataGridView.Rows[selectedRowIndex].Cells[1].Value.ToString();
                 if (MessageBox.Show($"Are you sure you want to delete Admin: {itemname}?", "Confirm delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
                 {
+                    if(adminId == id)
+                    {
+                        MessageBox.Show("You can not delete yourself from the admins list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     AdminsModel deleteAdmin = new AdminsModel()
                     {
                         Id = id
@@ -93,6 +99,14 @@ namespace PrepandPaint
             else
             {
                 Close();
+            }
+        }
+
+        private void adminDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if(e.ColumnIndex == 2 && e.Value != null)
+            {
+                e.Value = new string('*', e.Value.ToString().Length);
             }
         }
     }
